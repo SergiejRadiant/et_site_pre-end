@@ -1,0 +1,1222 @@
+@import "bourbon"
+@import "vars.sass"
+
+*::-webkit-input-placeholder
+	color: #666
+	opacity: 1
+
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #666
+body input:required:valid,
+body textarea:required:valid
+	color: #666
+
+//Custom Styles Here
+.social
+	display: inline-block
+	a
+		float: left
+		margin-right: 8px!important
+		margin-bottom: 8px!important
+		&:last-of-type
+			margin: 0
+		&:hover
+			text-decoration: none
+			i
+				color: lighten($light-green, 8%)
+		&:focus
+			outline: 0
+			text-decoration: none
+		&:visited
+			text-decoration: none
+	i	
+		color: $light-green
+		font-size: 36px
+		transition: all .4s ease
+		&:before
+			display: block
+			margin: 0
+
+
+.check-auto
+	padding-top: 58px
+	padding-bottom: 83px
+	display: flex
+	justify-content: center
+	flex-flow: wrap
+	margin: 0 auto
+	&-item
+		position: relative
+		display: block
+		width: 100%
+		max-width: 447px
+		text-align: left
+		margin: 0 58px
+		box-shadow: 0 0 36px rgba(0,0,0,.06)
+		&-topline
+			background-color: #FFF
+			width: 100%
+			position: relative
+			padding: 10px 175px 10px 15px
+			border-left: 5px solid $light-green
+			h2
+				font-size: 25px
+				margin: 0 0 12px
+			ul
+				padding: 0
+				margin: 0
+				display: inline-block
+				list-style-type: none
+				li
+					font: 15px RobotoLight, sans-serif
+					line-height: 1
+					padding: 0
+					margin: 0 10px 0 0
+					float: left
+					i
+						font-size: 14px
+						color: $light-green
+						margin-right: 7px
+		&-price
+			display: flex
+			font-family: column
+			align-items: center
+			position: absolute
+			top: 0
+			right: 0
+			height: 100%
+			padding: 0 21px
+			background-color: #edecec
+			span
+				color: #a6a8aa
+				font: 21px Roboto, sans-serif
+				line-height: 1
+		.img-wrap
+			position: relative
+			width: 100%
+			height: 241px
+			.slick-list
+				height: 100%
+				.slick-track
+					height: 100%
+			ul
+				width: 100%	
+				height: 100%
+				position: absolute
+				top: 0
+				left: 0
+			a, li
+				display: block
+				cursor: pointer
+				width: 100%
+				height: 100%
+				left: 0
+				top: 0
+				position: absolute
+				&:hover
+					img
+						opacity: 0.8
+			.mark
+				position: absolute
+				top: 67%
+				left: 9%
+				color: #fff
+				font-size: 16px
+				font-family: Roboto, sans-serif
+				opacity: 0.85
+				z-index: 2
+			li 
+				padding: 0
+				margin: 0
+				.mark
+					top: 18%
+			img
+				display: block
+				width: 100%
+				height: 100%
+				transition: opacity .6s ease
+		.btn-wrap
+			position: absolute
+			bottom: -31px
+			
+
+.how-we-work, .advantages
+	display: flex
+	padding: 25px 0 0 0
+	justify-content: space-around
+	flex-flow: wrap
+	&-item
+		width: 100%
+		text-align: center
+		margin-bottom: 25px
+		p
+			display: inline-block
+			font-size: 15px
+			line-height: 21px
+			margin-top: 25px
+		img
+			display: inline-block
+			width: auto
+
+.how-we-work-item
+	max-width: 224px
+	p
+		padding-top: 6px
+		border-top: 1px solid rgba(0,0,0,.12)
+	img
+		height: 121px
+
+.advantages-item
+	max-width: 179px
+	img
+		height: 141px
+
+
+.dest-categories
+	padding: 0 61.5px
+	margin-top: 20px
+	margin-bottom: 28px
+	.button
+		text-transform: none
+		font-size: 16px
+		border-radius: 21px
+		padding: 12px 22px 12px
+		margin: 4px
+		transition-duration: .2s
+		&:before
+			width: 0
+			height: 0
+		&:hover
+			background: lighten($light-green, 8%)
+			transform: scale(1)
+
+
+.destinations-item
+	display: flex
+	background-color: #fff
+	margin-bottom: 25px
+	box-shadow: 0 0 36px rgba(0,0,0,.06)
+	&:last-child
+		margin-bottom: 0
+	.destinations-img
+		position: relative
+		width: 100%
+		max-width: 432px
+		overflow: hidden
+	.destinations-text
+		position: relative
+		width: 100%
+		text-align: left
+		padding: 34px 56px
+	.price
+		display: inline-block
+		position: absolute
+		top: 36px
+		right: 47px
+		color: #bebdbd
+		font: 26px ClearSans, sans-serif
+		span
+			font-size: 22px
+		i
+			font-size: 17px
+			position: relative
+			top: -2px
+			&:before
+				margin: 0
+	h2
+		padding-right: 145px
+	p
+		margin-bottom: 25px
+	.img-wrap
+		position: absolute
+		top: 0
+		bottom: 0
+		right: 0
+		width: 738px
+		height: 738px
+		border-radius: 50%
+		margin: auto 0
+		overflow: hidden
+		img
+			height: 100%
+			width: auto
+	.button
+		width: 100%
+		max-width: 168px
+	&:nth-child(even)
+		.destinations-img
+			order: 1
+			.img-wrap
+				left: 0
+		
+
+.destinations-prevs
+	display: flex
+	justify-content: space-between
+	.destinations-item
+		width: 100%
+		max-width: 360px
+		flex-flow: column
+		margin-right: 20px
+		margin-bottom: 0
+		&:nth-child(even) 
+			.destinations-img
+				order: 0
+		&:last-child
+			margin-right: 0
+		.destinations-img
+			position: relative
+			max-width: 100%
+			height: 100%
+			max-height: 146px
+		.img-wrap
+			position: relative
+			width: 100%
+			border-radius: 0
+			img
+				width: 100%
+				height: auto
+		.destinations-text
+			padding: 20px 20px 80px
+			flex-grow: 1
+		h2
+			font-size: 23px
+			margin-bottom: 15px
+			padding-right: 0
+		p
+			margin-bottom: 24px
+		.button
+			position: absolute
+			left: 0
+			right: 0
+			bottom: 32px
+			margin: 0 auto
+	& + .button
+		margin: 36px 0 30px
+
+
+.counters-sec
+	padding: 145px 0
+	background: url(../img/counters-bg.jpg) center
+	background-size: cover
+
+.counters
+	display: flex
+	color: #fff
+	justify-content: space-around
+	&-item
+		width: 100%
+		max-width: 128px
+		span
+			display: block
+			font: 51px DroidSansBold, sans-serif
+			margin-bottom: 11px
+			line-height: 1
+		p
+			font: 16px ClearSans, sans-serif
+			margin: 0
+			line-height: 20px
+
+
+.reviews-sec
+	padding-top: 57px
+
+.reviews
+	display: flex
+	max-width: 1047px
+	margin: 0 auto
+	flex-flow: column
+	&.prev
+		flex-flow: row
+		justify-content: space-between
+		align-content: center
+		.reviews-item
+			width: 100%
+			max-width: 360px
+			margin-bottom: 0
+			margin-right: 20px
+			color: #000
+			transition: all .4s ease
+			&:hover,
+			&:focus,
+			&:visited
+				color: #000
+				text-decoration: none
+			&:hover
+				transform: scale(1.05)
+			&:last-child
+				margin-right: 0
+	&-item
+		position: relative
+		background-color: #fff
+		padding: 48px 20px 66px
+		margin-bottom: 49px
+		box-shadow: 0 0 36px rgba(0,0,0,.06)
+		&:last-child
+			margin-bottom: 0
+		.img-wrap
+			position: absolute
+			top: -32px
+			left: 0
+			width: 100%
+			text-align: center
+		&-icon
+			display: inline-block
+			width: 63px
+			height: 63px
+			margin: 0 auto
+			border-radius: 50%
+			background: url('../img/technical/review-icon.svg') no-repeat center $light-green
+		p
+			font-family: RobotoLightItalic, sans-serif
+			margin-bottom: 16px
+		.bottomline
+			position: absolute
+			left: 0
+			bottom: 0
+			width: 100%
+			padding-bottom: 24px
+		.author, .date
+			float: bottom
+		.author
+			font: 15px ClearSans, sans-serif
+			margin-bottom: 3px
+		.date
+			color: #8d979d
+			font: 16px RobotoLight, sans-serif
+
+
+.pagination
+	margin-top: 50px
+	margin-bottom: 50px
+	.page-item
+		display: inline-block
+		width: 47px
+		height: 47px
+		border-radius: 50%
+		padding: 16px 0 0 0
+		margin-right: 2px
+		margin-Left: 2px
+		background-color: #e5e5e5
+		text-align: center
+		transition: background-color .7s ease
+		&:first-child,
+		&:last-child
+			background-color: lighten($light-green, 3%)
+			.page-link
+				color: #fff
+			&:hover
+				background-color: lighten($light-green, 8%)
+				.page-link
+					color: #fff
+		&.active
+			background-color: lighten($light-green, 8%)
+			.page-link
+				color: #fff
+			&:hover
+				background-color: lighten($light-green, 8%)
+				.page-link
+					color: #fff
+		&.disabled
+			background-color: #b1e0d9
+			.page-link
+				color: #fff
+			&:hover
+				background-color: #b1e0d9
+				.page-link
+					color: #fff
+		&.dots
+			position: relative
+			background-color: transparent
+			span
+				display: inline-block
+				position: relative
+				top: 17px
+				width: 6px
+				height: 6px
+				border-radius: 50%
+				margin-right: 2px
+				background-color: $light-green
+				&:last-child
+					margin-right: 0
+			&:hover
+				background-color: transparent
+
+		&:hover
+			background-color: lighten($light-green, 45%)
+
+	.page-link
+		display: block
+		width: 100%
+		height: 100%	
+		color: #11b299
+		font: 16px ClearSans, sans-serif	
+		line-height: 1
+		&:focus
+			color: darken($light-green, 3%)
+			text-decoration: none
+		&:visited
+			color: darken($light-green, 3%)
+			text-decoration: none
+		&:hover
+			color: darken($light-green, 3%)
+			text-decoration: none
+
+	i
+		font-size: 10px
+		position: relative
+		top: -2px
+	
+
+.partners-sec
+	padding-top: 49px
+	padding-bottom: 49px
+
+.partners
+	display: flex
+	justify-content: space-around
+	flex-flow: wrap
+	.img-wrap
+		width: 100%
+		max-width: 130px
+		margin: 14px 50px
+		line-height: 150px
+		flex-flow: column
+		justify-content: center
+		img
+			width: 100%
+			height: auto
+			opacity: .72
+
+.text-block
+	.partners
+		margin-bottom: 49px
+
+
+.contacts-wrap
+	display: flex
+	padding: 22px 0 60px
+	justify-content: space-between
+	>.contacts
+		width: 100%
+		max-width: 328px
+		&:first-child
+			max-width: 244px
+		&:last-child
+			max-width: 283px
+		&-cell
+			padding-bottom: 14px
+			&.light
+				color: darken($light-green, 4%)
+				padding-right: 26px
+	.social
+		margin-top: 16px
+		margin-bottom: 2px
+
+.contacts
+	display: table
+	&-row
+		display: table-row
+	&-cell
+		vertical-align: top		
+		display: table-cell
+		padding-right: 13px
+		padding-bottom: 10px
+		&:last-child
+			padding-right: 0
+		&.light
+			color: lighten($light-green, 3%)
+			font-family: Roboto, sans-serif
+	p
+		margin-bottom: 8px
+		font-style: normal
+	a
+		display: inline-block
+		margin-bottom: 4px
+		color: inherit
+		font: inherit
+		transition: color .4s ease
+		&:hover
+			color: lighten($light-green, 3%)
+			text-decoration: none
+	a
+		margin-right: 10px
+		&:last-child
+			margin-right: 0
+	.button
+		margin-bottom: 29px
+
+.contacts-form
+	padding-top: 27px
+	.input-group-table
+		display: flex
+		margin: 0 auto
+		width: 100%
+		max-width: 970px
+		.group-item
+			width: 100%
+			input
+				margin-bottom: 8px
+				width: 100%
+				&:last-child
+					margin-bottom: 0
+			textarea
+				width: 100%
+				height: 100%
+			&:first-child
+				max-width: 294px
+				margin-right: 46px
+	.text-wrap
+		text-align: center
+	.button
+		padding: 16px 35px
+		width: 100%
+		max-width: 248px
+		border-radius: 23px
+		&:hover
+			transform: scale(1)
+	input[type="checkbox"]
+		display: none
+	input[type="checkbox"] + label
+		display: inline-block
+		margin: 0 auto
+		padding-left: 25px
+		line-height: 1.6
+		background: url('../img/technical/checkbox.svg') 0 6px no-repeat
+		cursor: pointer
+		margin: 16px 0
+		text-align: left
+		a
+			color: darken($light-green, 2%)
+			&:hover
+				color: darken($light-green, 2%)
+			&:visited
+				color: darken($light-green, 2%)
+				text-decoration: none
+			&:focus
+				color: $light-green
+	input[type="checkbox"]:checked + label
+		background: url('../img/technical/checkbox-checked.svg') left center no-repeat
+
+
+.main-form
+	.topline
+		margin-bottom: 28px
+		label
+			display: inline-block
+			width: 100%
+			max-width: 148px
+			color: $dark-blue
+			font: 15px Roboto, sans-serif
+			line-height: 1
+			text-align: center
+			border-radius: 3px
+			padding: 8px 20px 9px
+			margin-right: 15px
+			background-color: #e5e5e5
+			cursor: pointer
+			transition: all .3s ease
+			&:last-child
+				margin-right: 0
+			&:hover
+				background-color: lighten($light-green-trans, 15%)
+		input[type="radio"]
+			display: none
+		input[type="radio"]:checked + label
+			color: #fff
+			background-color: $light-green
+	&-row
+		display: table-row
+	&-cell
+		display: table-cell
+		padding-bottom: 22px
+		vertical-align: top
+		&.large
+			width: 856px
+		&.label
+			width: 156px
+			padding-top: 12px
+		&.common
+			padding-bottom: 0
+		&.contacts
+			width: 323px
+		&.phone
+			position: relative
+	label
+		position: relative
+		i
+			position: absolute
+			color: lighten($light-green, 3%)
+			font-size: 17px
+			line-height: 1
+			top: 2px
+			left: 13px
+			&.info
+				top: 1px
+				left: auto
+				right: 13px
+				font-size: 20px
+				opacity: 0.8
+				transform: scale(0)
+				transition: all .3s ease
+		input:focus + i.info
+			transform: scale(1)
+	input
+		padding-left: 41px
+		padding-right: 41px
+		&.geo, 	
+		&.name
+			width: 100%
+		&.date
+			width: 100%
+			max-width: 258px
+		&.transfer-time
+			width: 100%
+			max-width: 230px
+		&.phone
+			width: 100%
+			max-width: 323px
+		&.email
+			width: 100%
+			max-width: 323px
+		&.flight-num,
+		&.promo
+			width: 100%
+			max-width: 267px
+		&.promo
+			padding: 12px 22px 12px
+	textarea
+		width: 100%
+		height: 153px
+	.label, .label-inner
+		font: 16px RobotoMedium, sans-serif
+	.label-inner
+		padding: 12px 34px 0
+	.passengers
+		width: 100%
+		max-width: 294px
+		position: relative
+		color: lighten($light-green, 3%)
+		border-radius: 23px
+		line-height: 46px
+		font-size: 16px
+		padding: 0 22px 0 41px
+		border: 1px solid $light-green
+		display: flex
+		.dropdown-content
+			left: 0
+			top: 52px
+			&:before
+				left: 19px
+				right: auto
+		.stub
+			content: ''
+			width: 100%
+			height: 100%
+			position: absolute
+			top: 0
+			left: 0
+			z-index: 2
+			border-radius: 22px
+		i
+			position: absolute
+			color: lighten($light-green, 3%)
+			font-size: 17px
+			line-height: 1
+			top: 13px
+			left: 12px
+		.input-wrap
+			position: relative
+			&:before
+				content: ''
+				width: 100%
+				height: 100%
+				position: absolute
+				top: 0
+				left: 0
+			input
+				display: inline-block
+				color: #000
+				min-width: 22px
+				text-align: center
+				padding: 0 4px
+				width: auto
+				max-width: 30px!important
+				min-width: auto!important
+				border: none
+
+	.check-auto
+		justify-content: space-between
+
+	.check-auto-item
+		max-width: 422px
+		margin-left: 50px
+		margin-right: 0
+		label:hover
+			img
+				opacity: 1
+		li:before
+			display: none			
+		h2
+			font-size: 23px
+			margin: 0 0 8px
+		&-price
+			span
+				color: darken($light-green, 4%)
+		.img-wrap
+			height: 228px
+			label
+				display: block
+				cursor: pointer
+				width: 100%
+				height: 100%
+				left: 0
+				top: 0
+				position: absolute
+				&:hover
+					img
+						opacity: 0.8
+				&:after
+					content: ''
+					position: absolute
+					left: -5px
+					top: 54px
+					bottom: 0
+					width: 10px
+					height: 10px
+					border-radius: 50%
+					margin: auto 0
+					transform: scale(0)
+					background: $light-green url('../img/technical/check-auto-radio.svg') center no-repeat
+					background-size: 6.2px 4.5px
+					opacity: 0
+					transition: all .3s ease
+			input[type="radio"]
+				display: none
+				&:checked + label:after
+					transform: scale(10)
+					opacity: 1
+				&:checked + label img
+					opacity: 1
+	.btn-wrap
+		padding: 10px 0 4px
+	
+	.pay-method
+		padding-bottom: 22px
+		display: flex
+		align-content: center
+		input[type=radio]
+			display: none
+		.pay-method-item
+			width: 100%
+			max-width: 296px
+			position: relative
+			margin-right: 4px
+			&:last-child
+				margin-right: 0
+			&.dropdown
+				.pay-method-label
+					span
+						display: none
+					>.img-wrapimg-wrap
+						img
+							width: 0
+							opacity: 0
+							margin-right: 0
+							transition: all .6s ease
+					&.active
+						span
+							display: inline
+						>.img-wrap
+							img
+								width: 43px
+								margin-right: 13px
+								opacity: 1
+		.pay-method-label
+			height: 62px
+			width: 100%
+			position: relative
+			display: table
+			font-size: 14px
+			vertical-align: middle
+			line-height: 1.3
+			border-radius: 4px
+			padding: 12px 20px 11px 45px
+			margin-bottom: 6px
+			cursor: pointer
+			transition: all .6s ease
+			.pay-method-radio
+				position: absolute
+				width: 16px
+				height: 16px
+				border-radius: 50%
+				border: 2px solid #bcbcbc
+				top: 0
+				bottom: 0
+				left: 18px
+				margin: auto 0
+				transition: all .3s ease
+			&:hover
+				background-color: #f0f0f0
+				.pay-method-radio
+					border: 5px solid #bcbcbc
+			.text-wrap
+				display: table-cell
+				height: 100%
+				vertical-align: middle
+				span
+					display: inline-block
+			.img-wrap
+				display: table-cell
+				vertical-align: middle
+			img
+				width: 43px
+				height: 27px
+				position: relative
+				margin-right: 13px
+					
+		input[type=radio]:checked + label
+			color: #fff
+			background-color: $light-green
+			transition: all .3s ease
+			.pay-method-radio
+				border: 5px solid #fff
+				transition: all .2s ease
+		.dropdown-content
+			top: 51px
+			&:before
+				left: 20px
+
+
+.destinations-inner-content
+	width: 100%
+	position: relative
+	margin-bottom: 15px
+	border-radius: 4px
+	box-shadow: 0 0 18px (0,0,0,.04)
+	.text-block
+		border-top-right-radius: 0px
+		border-top-left-radius: 0px
+		box-shadow: 0 0 0 transparent
+		padding-top: 95px
+		h4:first-of-type
+			margin-top: 60px
+	& + section .check-auto
+		padding-top: 35px!important
+
+.destinations-inner-slider
+	width: 100%
+	height: 436px
+	position: relative
+
+.slider-slideshow
+	width: 100%
+	height: 100%
+	overflow: hidden
+	background: #d8d5d5
+	border-top-left-radius: 4px
+	border-top-right-radius: 4px
+	.slick-list
+		height: 100%
+		.slick-track
+			height: 100%
+	a
+		position: relative
+		&:hover
+			&:before
+				opacity: .7
+		&:before
+			content: ''
+			display: block
+			position: absolute
+			height: 100%
+			width: 100%
+			top: 0
+			bottom: 0
+			left: 0
+			right: 0
+			transition: opacity .5s ease
+			opacity: .3
+			margin: auto
+			background: url("../img/technical/slider-enlarge.svg") no-repeat
+			background-size: 72px
+			background-position: center center
+	img
+		width: 100%
+		height: 100%
+		border-top-left-radius: 4px
+		border-top-right-radius: 4px
+
+
+.slider-prev, .slider-next
+	position: absolute
+	height: 72px
+	width: 41px
+	top: 0
+	bottom: 0
+	margin: auto 0
+	background-size: cover
+	cursor: pointer
+	z-index: 1
+	opacity: 0.3
+	transition: opacity .7s ease
+	background: url("../img/technical/slider-arrow.svg") no-repeat
+	&:hover
+		opacity: 0.7
+
+.mfp-no-margins img.mfp-img 
+	padding: 0
+
+.mfp-no-margins .mfp-figure:after 
+	top: 0
+	bottom: 0
+
+.mfp-no-margins .mfp-container 
+	padding: 0 0
+
+.mfp-with-zoom .mfp-container,
+.mfp-with-zoom.mfp-bg 
+	opacity: 0
+	transition: all 0.3s ease-out
+
+.mfp-with-zoom.mfp-ready .mfp-container 
+		opacity: 1
+
+.mfp-with-zoom.mfp-ready.mfp-bg 
+		opacity: 0.8
+
+.mfp-with-zoom.mfp-removing .mfp-container, 
+.mfp-with-zoom.mfp-removing.mfp-bg 
+	opacity: 0
+	transition: all .3s ease-in-out
+
+.slider-prev
+	left: 0
+.slider-next
+	right: 0
+	transform: scaleX(-1)
+
+.slider-pager
+	margin: 0 auto
+	position: absolute!important
+	left: 0
+	right: 0
+	bottom: -36px
+	margin: 0 auto
+	text-align: center
+	z-index: 1000
+	width: 100%
+	max-width: 816px
+	.img-wrap
+		display: inline-block
+		width: 108px
+		height: 78px
+		border-radius: 2px
+		border: 2px solid rgba(245,243,243,.2)
+		background-color: #d8d5d5
+		overflow: hidden
+		margin-left: 5px
+		margin-right: 5px
+		cursor: pointer
+		transition: border .3s ease
+		img
+			width: 100%
+			height: 100%
+			opacity: 0.95
+		&.slick-current
+			border: 2px solid lighten($light-green, 3%)
+			img
+				opacity: 1
+
+
+.faqs-sec
+	padding-top: 4px
+	padding-bottom: 43px
+
+.accordeon-list
+	margin: 0 auto
+	width: 100%
+	max-width: 941px
+	text-align: left
+	box-shadow: 0 0 18px (0,0,0,.04)
+	.accordeon-item
+		background-color: #fff
+		border-bottom: 1px solid #eaeaea
+		overflow: hidden
+		&:first-child
+			border-top-right-radius: 4px
+			border-top-left-radius: 4px
+		&:last-child
+			border-bottom-right-radius: 4px
+			border-bottom-left-radius: 4px
+			border-bottom: 0
+		&.active
+			.accordeon-trigger
+				color: #fff
+				background-image: url('../img/technical/arrow-up.svg')
+				background-size: 41.68px 9.50px
+				background-color: lighten($light-green, 3%)
+			.accordeon-inner
+				display: block
+	
+	.accordeon-trigger
+		font: 16px RobotoMedium, sans-serif
+		padding: 17px 56.68px 17px 30px
+		cursor: pointer
+		background: url('../img/technical/arrow-down.svg') no-repeat right center
+		background-size: 41.68px 7.53px
+	.accordeon-inner
+		padding: 20px 30px
+		display: none
+		p
+			margin-bottom: 10px
+			&:last-child
+				margin-bottom: 0
+
+
+footer
+	color: #f0f0f0
+	font: 14px RobotoLight, sans-serif
+	background-color: #292727
+	padding: 43px 0 0 0
+
+.logo
+		width: 137px
+		height: 52px
+	
+.footer
+	display: flex
+	justify-content: space-between
+	flex-flow: wrap
+	&-item
+		width: 100%
+		max-width: 240px
+		&:first-child
+			a
+				margin-bottom: 0
+	.tagline
+		font: 15px RobotoItalic, sans-serif
+		margin: 20px 0
+	ul
+		margin-bottom: 0
+		a
+			display: inline-block
+			margin-bottom: 9px
+			color: inherit
+			font: inherit
+			transition: color .3s ease
+			&:hover
+				color: lighten($light-green, 3%)
+				text-decoration: none
+	
+	.social
+		margin-bottom: 10px
+	.button
+		margin: 6px 0 29px
+	.pay-methods
+		display: inline-block
+		img
+			width: 41px
+			height: 27px
+			margin: 0 5px 8px 0
+			float: left
+			&:last-of-type
+				margin: 0 0 11px 0
+
+.footer-bottom-line
+	margin-bottom: 10px
+	p
+		font: 13px RobotoLight, sans-serif
+		margin: 0 0 3px 0
+		opacity: 0.892
+
+
+.popup
+	position: relative
+	max-width: 354px
+	display: flex
+	flex-flow: column 
+	text-align: center
+	padding: 25px 30px 30px
+	margin:  auto
+	border-radius: 5px
+	background-color: #fff
+	h4
+		margin: 0 0 16px
+	p
+		font-size: 14px
+	label
+		width: 100%
+		margin: 0 auto 14px
+		text-align: left
+		&:nth-of-type(3)
+			margin: 0
+		input
+			width: 100%
+	input[type=checkbox]
+		display: none
+	input[type=checkbox] + label
+		font-size: 14px
+		line-height: 1.2
+		margin: 13px auto 14px
+		padding-left: 25px
+		background: url('../img/technical/checkbox.svg') 0 3px no-repeat
+		cursor: pointer
+	input[type=checkbox]:checked + label
+		background: url('../img/technical/checkbox-checked.svg') 0 3px no-repeat
+	.button
+		width: 100%
+		&:hover
+			transform: scale(1)
+	&.simple-text
+		max-width: 591px
+		p:last-of-type
+			margin-bottom: 0
+
+.mfp-fade.mfp-bg 
+  opacity: 0
+  transition: all 0.3s ease-out
+
+.mfp-fade.mfp-bg.mfp-ready 
+  opacity: 0.8
+
+.mfp-fade.mfp-bg.mfp-removing 
+  opacity: 0
+
+.mfp-fade.mfp-wrap .mfp-content 
+  opacity: 0
+  transition: all 0.3s ease-out
+
+.mfp-fade.mfp-wrap.mfp-ready .mfp-content 
+  opacity: 1
+
+.mfp-fade.mfp-wrap.mfp-removing .mfp-content 
+  opacity: 0
+
+	
+	
+
+
+//ALWAYS END
+@import "media"
+
+//Load Libs SASS
+@import "app/libs/express-transfers-iconfont/express-transfers-iconfont"
+@import "app/libs/magnific/magnific-popup"
+@import "app/libs/jQuery.mmenu/dist/css/jquery.mmenu.all"
+@import "app/libs/slick-carousel/slick"
+@import "app/libs/poshytip-1.2/tip-twitter"
+@import "app/libs/timepicki/timepicki"

@@ -1,0 +1,166 @@
+@import "bourbon"
+@import "vars.sass"
+
+.header-bottom-line
+	color: #ffffff
+	font: 16px Roboto, sans-serif
+	line-height: 22px
+	text-align: center
+	padding: 12px 0 18px
+	background-color: $dark-blue-cover
+	margin-top: 135px
+	transition: margin-top 1.0s ease
+	.tabs-controls,
+	.tabs-content
+		position: relative
+		list-style-type: none
+		padding: 0
+		margin: 0
+	.tabs-controls
+		display: block
+		line-height: 1
+		&-item
+			color: #ffffff
+			font: 14px Roboto, sans-serif
+			line-height: 29px
+			text-decoration: none
+			padding: 0
+			margin: 0
+			float: left
+			display: block
+			padding: 0 24px
+			margin-right: 4px
+			margin-bottom: 4px
+			border-radius: 4px
+			background-color: rgba(255,255,255,.37)
+			cursor: pointer
+			&:hover
+				color: $dark-blue
+				background-color: #fff
+			&.active
+				color: $dark-blue
+				background-color: #fff
+		.review-form-tab
+			float: right
+			color: $light-green-lighten
+			margin-right: 0
+			background-color: $light-green-trans
+			&:hover
+				color: $dark-blue
+				background-color: $light-green-lighten;
+			&.active
+				color: $dark-blue
+				background-color: $light-green-lighten;
+				
+	.tabs-content
+		display: inline-block
+		width: 100%
+		.tabs-item
+			display: none
+			&.active
+				display: block
+	.header-main-form
+		.form-header
+			display: flex
+		label
+			position: relative
+			margin: 0 1px
+			flex-grow: 1
+			&.text
+				flex-basis: 374px
+			&.date		
+				flex-basis: 157px
+			&.passengers
+				flex-basis: 68px
+				min-width: 68px
+			a, span
+				display: block
+				position: absolute
+				top: 12px
+				left: 8px
+				line-height: 1
+				i
+					color: $light-green
+					font-size: 16px
+	input, textarea
+		border: none
+		border-radius: 2px
+		color: #000000
+		font: 16px RobotoLight, sans-serif
+		line-height: 40px
+		padding-left: 33px
+		padding-right: 14px
+		width: 100%
+	
+.simple-form
+	display: flex
+	max-width: 1010px
+	margin: 0 auto
+	justify-content: center
+	flex-flow: wrap
+	p
+		max-width: 874px
+		margin: 16px 0 22px
+	.left-block
+		flex-basis: 348px
+		margin-right: 46px
+		flex-grow: 1
+	.right-block
+		flex-basis: 615px
+		flex-grow: 1
+	input
+		margin-bottom: 8px
+	textarea
+		height: 142px
+		resize: none
+	&.review-form
+		textarea
+			height: 94px
+	&.order-form
+		height: 82px
+	.checkboxes
+		display: inline-block
+		text-align: left
+		list-style-type: none
+		margin: 15px auto 14px
+		position: relative
+		padding: 0
+		li
+			display: block
+			padding-bottom: 14px
+			padding-left: 56px
+			position: relative
+			p, a
+				line-height: 1
+				padding: 0
+				margin: 0
+				font: 15px Roboto, sans-serif
+	
+	.simple-form-checkbox-label
+		position: absolute
+		top: 0
+		left: 0
+		cursor: pointer
+		position: absolute
+		width: 28px
+		height: 14px
+		border-radius: 7px
+		background-color: #efefef
+		&:before
+			content: ''
+			position: absolute
+			top: -2px
+			width: 18px
+			height: 18px
+			border-radius: 9px
+			background-color: #afbcbc	
+	input[type="checkbox"]
+		display: none
+	input[type="checkbox"]:checked + label:before
+		content: ''
+		position: absolute
+		top: -2px
+		width: 18px
+		height: 18px
+		border-radius: 9px
+		background-color: $light-green

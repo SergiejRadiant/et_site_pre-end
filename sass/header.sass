@@ -1,0 +1,951 @@
+@import "bourbon"
+@import "vars.sass"
+@import "app/libs/datepicker/jquery-ui.min"
+
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.6
+	font-family: "Roboto", sans-serif
+	overflow-x: hidden
+	background-color: #f5f5f5
+
+.hidden
+	display: none
+
+
+section, main
+	text-align: center
+	&.grey
+		background-color: #e9e9e9
+
+
+h1
+	color: #ffffff
+	font-size: 22px
+	font-family: MetropolisBold, sans-serif
+	text-transform: uppercase
+	font-weight: normal
+	margin: 0
+
+
+h2
+	font: 30px RobotoLight, sans-serif
+	margin: 0 0 23px
+
+
+h3
+	color: #969595
+	font: 19px RobotoMedium, sans-serif
+	margin: 12px 0 13px
+
+
+h4
+	font: 18px RobotoMedium, sans-serif
+	margin: 52px 0 23px
+	&:first-of-type
+		margin-top: 0
+
+
+h5
+	color: #d8dbdb
+	font: 14px Roboto, sans-serif
+	margin: 0 0 14px 0
+
+
+h6
+	font: 16px RobotoMedium, sans-serif
+	margin: 10px 0
+
+
+p
+	margin: 0 0 23px 0
+	span
+		color: darken($light-green, 4%)
+		font: 17px RobotoMedium, sans-serif
+
+
+ul
+	padding: 0
+	margin: 0 0 12px 0
+	list-style-type: none
+
+
+.breadcrumps
+	text-align: left
+	color: #b4b4b4
+	font: 15px RobotoLight
+	margin: 4px 0
+	a, span
+		padding-right: 4px
+	a:hover
+		color: #b4b4b4
+	a:visited
+		color: #b4b4b4
+		text-decoration: none
+	a:focus
+		color: #b4b4b4
+		text-decoration: none
+	a:first-of-type:hover
+		text-decoration: none
+	i
+		color: $light-green
+	& + h3
+		margin-top: 0
+
+
+.text-block	
+	li
+		position: relative
+		margin-bottom: 11px
+		list-style-type: none
+		padding: 0 0 0 40px
+		&:before
+			content: ''
+			position: absolute
+			top: 8px
+			left: 10px
+			width: 6px
+			height: 6px
+			background-color: #cbd8d6
+			border-radius: 3px
+
+
+a
+	color: darken($light-green, 5%)
+	&:hover
+		color: darken($light-green, 5%)
+	&:visited
+		color: darken($light-green, 5%)
+	&:focus
+		outline: 0
+	
+
+.text-block
+	width: 100%
+	position: relative
+	padding: 30px 66px
+	margin-bottom: 15px
+	text-align: left
+	border-radius: 4px
+	background-color: #ffffff
+	box-shadow: 0 0 18px (0,0,0,.04)
+	.btn-wrap
+		padding: 4px 0
+
+
+.button
+	position: relative
+	display: inline-block
+	color: #ffffff
+	font: 14px Roboto, sans-serif
+	line-height: 1
+	text-transform: uppercase
+	text-align: center!important
+	border: 0
+	border-radius: 25px
+	overflow: hidden
+	background-color: $light-green
+	padding: 18px 35px
+	transition: all .5s 
+	&:before
+		content: ''
+		position: absolute
+		top: 0
+		left: -200%
+		z-index: -1
+		background-color: lighten($light-green, 8%)
+		height: 400px
+		width: 500px
+		border-radius: 50%
+		transition: all .5s
+	&:hover
+		color: #ffffff
+		text-decoration: none
+		transform: scale(1.08)
+		box-shadow: 0 0 36px rgba(0,0,0,.06)
+		&:before
+			top: -60px
+			left: -60px
+	&:focus
+		color: #ffffff
+		text-decoration: none
+		outline: 0
+	&:visited
+		color: #ffffff
+		text-decoration: none
+	&.large
+		width: 100%
+		max-width: 326px
+	&.lite
+		max-width: 168px
+		color: $light-green
+		padding: 16px 35px 16px
+		background-color: transparent
+		border: 1px solid $light-green
+		transition: all .5s
+		&:before
+			content: ''
+			position: absolute
+			top: -25px
+			left: 55%
+			transform: translate(-50%, -50%) scale(1)
+			display: block
+			width: 60px
+			height: 60px
+			background: $light-green
+			border-radius: 50%
+			transition: all .7s
+		&:hover
+			color: #ffffff
+			transform: scale(1)
+			&:before
+				transform: scale(8.3)
+	&.disabled
+		background-color: #b1e0d9
+		&:before
+			width: 0
+			height: 0
+		&:hover
+			background-color: #b1e0d9
+			transform: scale(1)
+			box-shadow: 0 0 0 transparent
+	&.small
+		max-width: 160px
+		color: $dark-blue
+		font: 12px Roboto, sans-serif
+		border-radius: 3px
+		padding: 8px 20px 8px
+		background-color: #e5e5e5
+		transition: all .5s
+		&:before
+			content: ''
+			position: absolute
+			top: 0
+			left: -200%
+			z-index: -1
+			background-color: $light-green
+			height: 400px
+			width: 400px
+			border-radius: 50%
+			transition: all .5s
+		&:hover
+			transform: scale(1)
+			color: #ffffff
+			&:before
+				top: -60px
+				left: -60px
+			
+.btn-wrap
+	width: 100%
+	text-align: center
+
+
+input,
+textarea
+	border-radius: 23px
+	line-height: 22px
+	padding: 12px 22px
+	border: 1px solid $light-green
+	&:focus
+		outline: 0
+	@include placeholder
+		color: $dark-blue
+		opacity: .49
+
+input
+	height: 48px
+
+textarea
+	resize: none
+
+.toggle-btn
+	width: 24px
+	height: 14px
+	margin-left: auto
+	background-color: transparent
+	z-index: 5
+	border: none
+	padding: 0
+	display: none
+	cursor: pointer
+	transition: transform .5s ease, margin .4s ease
+	&.active
+		position: relative
+		margin-top: -10px
+		margin-bottom: 10px
+		margin-right: -30px
+		-o-transform: scale(0.7);
+		-ms-transform: scale(0.7);
+		-moz-transform: scale(0.7);
+		-webkit-transform: scasle(0.7);
+		transform: scale(0.7);
+	&:focus
+		outline: 0
+
+.sandwich 
+	display: block
+	width: $w
+	height: $w
+	z-index: 3
+	margin-left: auto
+	margin-right: auto
+.sw-topper
+	display: block
+	position: relative
+	top: 0
+	width: $w 
+	height: $h
+	background: rgb(255, 255, 255)
+	border: none
+	transition: transform 0.5s, top 0.2s
+.sw-bottom
+	display: block
+	position: relative
+	width: $w
+	height: $h
+	top: $h * 2
+	background: rgb(255, 255, 255)
+	border: none
+	transition: transform 0.5s, top 0.2s
+	transition-delay: 0.2s, 0s 
+.sw-footer
+	display: block
+	position: relative
+	width: $w
+	height: $h
+	top: $h * 4
+	background: rgb(255, 255, 255)
+	border: none
+	transition: all 0.5s
+	transition-delay: 0.1s
+.sandwich.active 
+	.sw-topper
+ 		top: 7px
+ 		transform: rotate(-45deg)
+ 		background: #fff
+	.sw-bottom
+ 		top: 5px
+ 		transform: rotate(45deg)
+ 		background: #fff
+	.sw-footer
+ 		opacity: 0
+ 		top: 0
+ 		transform: rotate(180deg)
+
+
+body
+	#mm-blocker
+		z-index: 25
+		cursor: pointer
+	.mm-menu.mm-offcanvas
+		z-index: 30
+
+.mm-slideout
+	z-index: 22!important
+
+.dropdown
+	span
+		cursor: pointer
+	&.passengers
+		.dropdown-content
+			min-width: 0
+			padding: 10px 20px 14px 20px
+			text-align: left
+			&:before
+				left: auto
+				right: 24px
+			.count-passengers
+				h6
+					color: #242424
+					font-size: 15px
+					margin: 6px 0
+					opacity: 0.5
+					transition: opacity .3s ease
+					span
+						color: #7b7b7b
+						font: 13px Roboto, sans-serif
+						margin-left: 5px
+				i
+					color: #b1e0d9
+					font-size: 13px
+					position: relative
+					left: auto
+					right: auto
+					bottom: auto
+					top: auto
+					transition: color .3s ease
+				&:hover	
+					h6
+						opacity: 1
+					i
+						color: $light-green
+					.counter
+						input
+							opacity: 1
+				.counter
+					display: flex
+					align-items: center
+					input
+						width: 30px
+						height: 25px
+						position: relative
+						text-align: center
+						display: block
+						border: none
+						background-color: transparent
+						border-radius: 0px
+						padding: 0
+						margin: 0 2px
+						opacity: 0.3
+						transition: opacity .3s ease
+					.btn
+						color: darken($light-green, 5%)
+						font: 14px ClearSans, sans-serif
+						background-color: $light-green-trans
+						width: 34px
+						height: 26px
+						justify-content: center
+						align-items: center
+						display: flex
+						border-radius: 2px
+						cursor: pointer
+						margin-left: 5px
+						transition: background-color .3s
+						&:hover	
+							background-color: $light-green-lighten
+				&.active
+					h6
+						opacity: 1
+					i
+						color: $light-green
+					.counter
+						input
+							opacity: 1
+
+.dropdown-content
+	position: absolute
+	display: none
+	top: 45px
+	min-width: 108px
+	border-radius: 5px
+	margin-bottom: 0
+	color: #716e6e
+	background-color: #fff
+	box-shadow: 1px 1px 3px rgba(0,0,0,.34)
+	z-index: 1000
+	&:before
+		content: ''
+		position: absolute
+		top: -12px
+		left: 31px
+		border: 6px solid transparent
+		border-bottom: 6px solid #f5f2f5
+		display: block
+		width: 0
+		height: 0
+	input
+		display: none
+	a, label
+		display: block
+		position: relative!important
+		color: #716e6e!important
+		font-size: 13px!important
+		line-height: 21px!important
+		padding: 5px 18px 5px 56px
+		overflow: hidden
+		transition: background-color .2s ease
+		img
+			width: 33px
+			height: 21px
+			position: absolute
+			top: 5px
+			left: 9px
+			border-radius: 3px
+			box-shadow: 0 0 7px rgba(0,0,0,.18)
+			float: left
+		&:hover
+			background-color: #ededed
+		&:first-of-type
+			border-top-left-radius:  4px
+			border-top-right-radius: 4px
+		&:last-of-type
+			border-bottom-left-radius:  4px
+			border-bottom-right-radius: 4px
+		&:before
+			display: none
+	&.open
+		display: block
+
+.pac-container
+	margin-top: 5px
+	position: relative
+	overflow: visible
+	border: 0
+	border-radius: 5px
+	box-shadow: 1px 1px 3px rgba(0,0,0,.34)
+	&:before
+		content: ''
+		position: absolute
+		top: -12px
+		left: 31px
+		border: 6px solid transparent
+		border-bottom: 6px solid #f5f2f5
+		display: block
+		width: 0
+		height: 0
+	.pac-item
+		border: 0
+		&:nth-child(2n+1)
+			background-color: #f5f2f5
+		&:hover
+			background-color: #e9eaea
+		&:first-child
+			border-top-right-radius: 5px
+			border-top-left-radius: 5px
+	.pac-matched
+		color: $light-green
+		font-weight: 400
+	.pac-item-query
+		color: $dark-blue
+		font: 15px Roboto, sans-serif
+		line-height: 31px
+
+.ui-datepicker
+	margin-top: 5px
+	border-radius: 0
+	padding: 0
+	z-index: 100!important
+	box-shadow: 1px 1px 3px rgba(0,0,0,.34)
+	&:before
+		content: ''
+		position: absolute
+		top: -12px
+		left: 31px
+		border: 6px solid transparent
+		border-bottom: 6px solid #8e969a
+		display: block
+		width: 0
+		height: 0
+	&.ui-widget.ui-widget-content
+		border: 0
+	&-header
+		padding: 0
+		border-radius: 0
+		border: 0
+		color: #fff
+		background-color: #8e969a
+		span
+			font: 15px Roboto, sans-serif
+	&-title
+		margin: 0 4em!important
+		line-height: 30px!important
+	&-next,
+	&-prev
+		top: 3px!important
+		left: 46px!important
+		cursor: pointer
+		&:before
+			position: absolute
+			top: 0
+			bottom: 0
+			left: 0
+			right: 0
+			margin: auto
+			color: #dddada
+			font-size: 9px
+			font-family: express-transfers-iconfont
+			font-style: normal
+			font-weight: 400
+			speak: none
+			display: inline-block
+			text-decoration: inherit
+			width: 1em
+			text-align: center
+			font-variant: normal
+			text-transform: none
+			height: 1em
+			line-height: 1em
+		&:hover
+			text-decoration: none
+		&:visited
+			text-decoration: none
+	.ui-state-hover
+		background-color: transparent
+		border: 0
+		color: $light-green
+
+	&-prev
+		&:before
+			content: '\e800'
+	&-next
+		left: auto!important
+		right: 46px!important
+		&:before
+			content: '\e801'
+	table
+		margin: 0
+		thead
+			color: darken(#8e969a, 10%)
+			font: 12px RobotoMedium, sans-serif
+			background-color: #f5f2f5
+			th
+				line-height: 16px
+		tbody
+			tr:nth-of-type(2n)
+				background-color: #f5f2f5
+			td:hover
+				background-color: #e9eaea 
+		.ui-state-default
+			border: 0
+			color: #716e6e
+			background-color: transparent
+			line-height: 23px
+		.ui-datepicker-today
+			background-color: $light-green-trans
+			&:hover
+				background-color: lighten(#b1e0d9, 11%)
+		.ui-datepicker-current-day
+			background-color: #8e969a
+			a
+				color: #fff
+			&:hover
+				background-color: #8e969a
+
+
+.mm-navbar
+	background-color: $light-green
+	border-bottom: 0!important
+	padding: 0 25px!important
+
+.mm-menu .mm-navbar a, 
+.mm-menu .mm-navbar>*, 
+.mm-menu em.mm-counter
+	text-align: left!important
+	color: rgba(255,255,255,.8)!important
+
+.mm-listview>li:after
+	border-color: #E5E5E5!important
+	left: 0!important
+
+.mm-listview>li a
+	padding-left: 25px!important
+	&.active
+		background-color: rgba(0,0,0,.12)
+		&:hover
+			background-color: rgba(0,0,0,.12)
+	&:hover
+		background-color: rgba(0,0,0,.04)
+.mm-listview>li:first-child
+	a
+		padding-left: 50px!important
+	&:before
+		content: '\e807'
+		position: absolute
+		left: 25px
+		top: 11px
+		font-family: express-transfers-iconfont
+		font-style: normal
+		font-weight: 400
+		speak: none
+		display: inline-block
+		text-decoration: inherit
+		width: 1em
+		text-align: center
+		font-variant: normal
+		text-transform: none
+		color: $light-green
+		font-size: 16px
+		line-height: 1em
+
+.info
+	cursor: pointer
+
+header
+	background: url(../img/header-bg.jpg) 50% -127px
+	&.main-header
+		.header-bottom-line
+			margin-top: 135px
+
+
+	.logo
+		width: 137px
+		height: 52px
+
+	.topline
+		padding: 14px 0
+		background-color: $dark-blue-cover
+		position: relative
+		z-index: 2
+		&-wrap
+			display: flex
+			justify-content: space-between
+			align-items: center
+
+		.navbar
+			display: flex
+			align-items: center
+			position: relative
+			top: -2px
+		
+		.switch-lang-btn
+			position: relative
+			display: inline-block
+			margin-right: 20px
+			.lang-icon
+				border-radius: 2px
+				width: 23px
+				height: 14px
+				opacity: 1
+				margin-right: 6px
+				box-shadow: 0 0 5px rgba(0,0,0,.36)
+			.dropdown-icon
+				width: 9.38px
+				height: 3.75px
+				opacity: 0.5
+				margin-right: 6px
+			.dropdown-content
+				top: 40px
+				a
+					text-decoration: none
+				&:before
+					left: 25px
+
+		.menu
+			ul
+				display: -webkit-flex
+				display: -moz-flex
+				display: -ms-flex
+				display: -o-flex
+				display: flex
+				margin: 0
+				align-items: center
+				li
+					margin-right: 20px
+					&:last-child
+						margin-right: 0
+					a
+						color: #f0f0f0
+						font: 15px Roboto, sans-serif
+						transition: color .3s ease
+						&:hover
+							color: $light-green
+							text-decoration: none
+						&:focus
+							outline: none
+							text-decoration: none
+						&.active
+							color: #9a9d9e
+
+.header-text
+	text-align: center
+	padding-top: 30px
+	padding-bottom: 65px
+	z-index: 1
+	position: relative
+
+
+.header-bottom-line
+	color: #ffffff
+	line-height: 22px
+	text-align: center
+	padding: 12px 0 18px
+	position: relative
+	z-index: 1
+	background-color: $dark-blue-cover
+	.tabs-controls,
+	.tabs-content
+		list-style-type: none
+		padding: 0
+		margin: 0
+	.tabs-controls
+		display: flex
+		line-height: 1
+		&-item
+			color: #ffffff
+			font: 14px Roboto, sans-serif
+			line-height: 29px
+			margin: 0
+			padding: 0 20px
+			margin-right: 3px
+			margin-bottom: 4px
+			border-radius: 4px
+			transition: .5s ease all
+			background-color: rgba(255,255,255,.37)
+			cursor: pointer
+			&:hover
+				background-color: rgba(255,255,255,.53)
+			&.active
+				color: $dark-blue
+				background-color: #fff		
+			&.discount
+				position: relative
+				padding-right: 60px
+				span
+					display: flex
+					align-items: center
+					justify-content: center
+					position: absolute
+					top: 0
+					bottom: 0
+					right: 0
+					margin: auto 0
+					color: $light-green-lighten
+					font: 16px RobotoMedium, sans-serif
+					border-top-right-radius: 4px
+					border-bottom-right-radius: 4px
+					padding: 0 8px 0 11px
+					background-color: rgba(255,255,255,.17)
+				&.active
+					span
+						color: #ffffff
+						background-color: $light-green
+		.review-form-tab
+			margin-left: auto
+			color: $light-green-lighten
+			margin-right: 0
+			background-color: $light-green-trans
+			i
+				font-size: 14.5px
+				&:before
+					margin-left: 0
+			&:hover
+				background-color: rgba(104,242,221,.57);
+			&.active
+				color: $dark-blue
+				background-color: $light-green-lighten
+	form.header-main-form
+		display: block
+		input
+			height: 40px
+		input,
+		textarea,
+		.input
+			position: relative
+			border: none
+			border-radius: 2px
+			color: #000000
+			font: 15px "RobotoLight", sans-serif
+			padding: 10px 14px
+			background-color: #FFF
+			width: 100%
+			resize: none
+		.form-header
+			display: flex
+			label
+				position: relative
+				width: 100%
+				max-width: 373.5px
+				margin-right: 3px
+				&:nth-child(n+3)
+					max-width: 158px
+				&:last-child
+					max-width: 65px
+					margin-right: 0
+				i
+					cursor: pointer
+					display: block
+					position: absolute
+					top: 12px
+					left: 8px
+					z-index: 3
+					line-height: 1
+					color: $light-green
+					font-size: 16px
+			input
+				padding-left: 33px
+		.dropdown
+			>i
+				width: 100%
+				height: 100%
+				text-align: left
+				vertical-align: middle
+				padding-top: 12px
+				padding-left: 8px
+				top: 0!important
+				left: 0!important
+				position: absolute
+			input
+				cursor: pointer
+			.dropdown-content
+				right: 0
+
+		.form-content
+			display: none
+			padding: 17px 0
+			margin: 0 auto
+			p
+				max-width: 874.5px
+				margin: 0 auto 23px
+			.input-group-table
+				max-width: 1010px
+				display: flex
+				margin: 0 auto
+				.group-item
+					width: 100%
+					input
+						margin-bottom: 8px
+						&:last-child
+							margin-bottom: 0
+					textarea
+						height: 100%
+					&:first-child
+						max-width: 348px
+						margin-right: 46px
+			.checkboxes
+				display: table
+				text-align: left
+				font-size: 15px
+				margin: 20px  auto
+				li
+					padding-bottom: 11px
+					&:last-child
+						padding-bottom: 0
+				label
+					display: inline-block
+					position: relative
+					padding-left: 56px
+					.checkbox
+						top: 5px
+						left: 0
+						cursor: pointer
+						position: absolute
+						width: 28px
+						height: 14px
+						border-radius: 7px
+						background-color: #efefef
+						&:before
+							content: ''
+							position: absolute
+							top: -2px
+							width: 18px
+							height: 18px
+							border-radius: 9px
+							transform: translateX(0)
+							background-color: #afbcbc
+							transition: all .3s ease
+				input[type=checkbox]
+					display: none
+					&:checked + label .checkbox:before
+						transform: translateX(10px)
+						background-color: $light-green
+			.alert
+				p
+					margin-bottom: 10px
+			.check-auto
+				color: #000
+				padding-top: 30px
+				padding-bottom: 63px
+				span
+					&.active
+						color: $light-green
+					&.output
+						color: $light-green
+				.btn-wrap	
+					bottom: -29px
+
+		
+
+

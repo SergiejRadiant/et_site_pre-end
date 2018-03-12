@@ -1,0 +1,79 @@
+@font-face {
+  font-family: 'express-transfers-iconfont';
+  src: url('../fonts/express-transfers-iconfont/express-transfers-iconfont.eot?60194841');
+  src: url('../fonts/express-transfers-iconfont/express-transfers-iconfont.eot?60194841#iefix') format('embedded-opentype'),
+       url('../fonts/express-transfers-iconfont/express-transfers-iconfont.woff2?60194841') format('woff2'),
+       url('../fonts/express-transfers-iconfont/express-transfers-iconfont.woff?60194841') format('woff'),
+       url('../fonts/express-transfers-iconfont/express-transfers-iconfont.ttf?60194841') format('truetype'),
+       url('../fonts/express-transfers-iconfont/express-transfers-iconfont.svg?60194841#express-transfers-iconfont') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'express-transfers-iconfont';
+    src: url('../font/express-transfers-iconfont.svg?60194841#express-transfers-iconfont') format('svg');
+  }
+}
+*/
+ 
+ [class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "express-transfers-iconfont";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+ 
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+ 
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+ 
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+ 
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+ 
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+ 
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+ 
+.icon-angle-left:before { content: '\e800'; } /* '' */
+.icon-angle-right:before { content: '\e801'; } /* '' */
+.icon-arrow-left:before { content: '\e802'; } /* '' */
+.icon-arrow-right:before { content: '\e803'; } /* '' */
+.icon-calendar:before { content: '\e804'; } /* '' */
+.icon-case:before { content: '\e805'; } /* '' */
+.icon-clock:before { content: '\e806'; } /* '' */
+.icon-home:before { content: '\e807'; } /* '' */
+.icon-info:before { content: '\e808'; } /* '' */
+.icon-mail:before { content: '\e809'; } /* '' */
+.icon-man:before { content: '\e80a'; } /* '' */
+.icon-map-mark:before { content: '\e80b'; } /* '' */
+.icon-phone:before { content: '\e80c'; } /* '' */
+.icon-plane:before { content: '\e80d'; } /* '' */
+.icon-social-im:before { content: '\e80e'; } /* '' */
+.icon-social-fb:before { content: '\e80f'; } /* '' */
+.icon-social-inst:before { content: '\e810'; } /* '' */
+.icon-social-viber:before { content: '\e811'; } /* '' */
+.icon-social-wa:before { content: '\e812'; } /* '' */
+.icon-star:before { content: '\e813'; } /* '' */
+.icon-social-twitter:before { content: '\e814'; } /* '' */
+.icon-social-skype:before { content: '\e815'; } /* '' */

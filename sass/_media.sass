@@ -1,0 +1,739 @@
+@import "bourbon"
+
+/*==========  Desktop First Method  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1199px)
+	header
+		.topline
+			.logo
+				width: 116px
+				height: 44px
+			.navbar
+				position: relative
+				top: -2px
+			.menu
+				ul
+					li
+						a
+							font-size: 14px
+				.lang-icon
+					width: 22px
+		&.main-header
+			.header-bottom-line
+				margin-top: 115px
+
+	.check-auto
+		&-item
+			max-width: 390px
+			margin: 0 38px
+			&-topline
+				padding: 11px 175px 8px 15px
+			h2
+				font-size: 24px
+			.img-wrap
+				height: 212px
+
+	.main-form
+		&-cell.label,
+		&-cell.label-inner
+			font-size: 15px
+		&-cell.contacts
+			width: 281px
+		.check-auto-item
+			margin-left: 45px
+			margin-right: 27px
+			max-width: 316px
+			&-topline
+				padding: 11px 145px 8px 15px
+				h2
+					font-size: 17px
+					margin: 0 0 7px
+				li
+					font: 13px RobotoLight, sans-serif!important
+					line-height: 1
+					padding: 0
+					margin: 0 5px 0 0!important
+					float: left
+					i
+						font-size: 13px!important
+						color: $light-green
+						margin-right: 4px!important
+			&-price
+				padding: 0 14px
+				span
+					font-size: 18px
+			.img-wrap
+				height: 164px
+				input[type="radio"]:checked + label:after
+					transform: scale(9)
+					top: 29px
+		.pay-method
+			.pay-method-label
+				font-size: 12px
+				.pay-method-radio
+					width: 15px
+					height: 15px
+
+
+	.how-we-work-item
+		max-width: 184px
+		img
+			height: 111px
+
+	.advantages-item
+		max-width: 149px
+		img
+			height: 121px
+
+	.destinations-item
+		.destinations-img
+			max-width: 352px
+
+	.destinations-prevs
+		.destinations-item
+			.destinations-img
+				height: 146px
+			p
+				font-size: 15px
+
+	.reviews.prev
+		p
+			font-size: 15px
+	
+	.partners-sec
+		padding-top: 41px
+		padding-bottom: 41px
+	.partners .img-wrap
+		max-width: 99px!important
+
+	.accordeon-trigger
+		font-size: 15px!important
+
+	.contacts-wrap
+		flex-flow: column
+		.contacts
+			text-align: left!important
+			max-width: unset!important
+			&-cell
+				display: block
+				padding-bottom: 6px
+		.contacts:nth-of-type(2)
+			margin-top: 6px
+		.social
+			width: 100%
+			margin-top: 61px
+		.button
+			margin: 3px 0 0 0
+
+	.destinations-inner-slider
+		height: 377px
+	
+	.slider-pager
+		bottom: -33px
+		max-width: 739px
+		.img-wrap
+			width: 97px
+			height: 71px
+	
+	.destinations-inner-content
+		.text-block
+			padding-top: 89px
+			h4:first-of-type
+				margin-top: 52px
+				
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 991px)
+	h1
+		font-size: 19px
+	header
+		.header-text
+			padding-bottom: 55px
+		.topline
+			.logo
+				width: 71px
+				height: 27px
+			.switch-lang-btn
+				.lang-icon
+					width: 18px
+					height: 11px
+				.dropdown-icon
+					width: 7.38px
+			.menu
+				ul
+					li
+						a
+							font-size: 12px
+				
+		&.main-header
+				.header-bottom-line
+					margin-top: 0
+
+	.tabs-controls-item:nth-child(1)
+		margin-left: 0!important
+		margin-right: 1.5px!important
+	.tabs-controls-item:nth-child(2),
+	.tabs-controls-item:nth-child(3)
+		margin-left: 1.5px!important
+		margin-right: 1.5px!important
+	.form-header
+		flex-wrap: wrap
+		align-content: stretch
+		label
+			max-width: 100%!important
+			margin-left: 1.5px!important
+			margin-right: 1.5px!important
+			margin-bottom: 4px
+			&.date
+				max-width: 321px!important
+			&.passengers
+				max-width: 69px!important
+	
+	.form-content
+		.checkboxes
+			margin-top: 15px
+		.check-auto
+			padding-top: 48px
+			padding-bottom: 48px
+			.btn-wrap
+				bottom: -22px!important
+
+	.how-we-work-item
+		max-width: 224px
+		img
+			height: 111px
+
+	.input-group-table
+		max-width: 600px!important
+		flex-flow: column
+		.group-item
+			max-width: 100%!important
+			margin-right: 0!important
+			&:first-child
+				margin-bottom: 8px
+		textarea
+			height: 130px!important
+
+	.check-auto
+		justify-content: space-between
+		padding: 55px 1.5px 77px
+		&-item
+			margin-right: 0
+			margin-left: 0
+			max-width: 316px
+			&-topline
+				padding: 11px 145px 8px 15px
+				h2
+					font-size: 17px
+					margin: 0 0 7px
+				li
+					font: 13px RobotoLight, sans-serif!important
+					line-height: 1
+					padding: 0
+					margin: 0 5px 0 0!important
+					float: left
+					i
+						font-size: 13px!important
+						color: $light-green
+						margin-right: 4px!important
+			&-price
+				padding: 0 14px
+				span
+					font-size: 18px
+			.img-wrap
+				height: 164px
+				.mark
+					top: 10%
+					font-size: 15px
+			.btn-wrap
+				bottom: -30px
+			.button
+				font-size: 13px
+				padding: 16px 29px
+
+	.advantages-item
+		max-width: 179px
+		img
+			height: 121px
+
+	.destinations-prevs
+		flex-flow: column
+		align-items: center
+		.destinations-item
+			p
+				font-size: 16px
+
+	.destinations-item
+		margin: 0 auto 20px!important
+		max-width: 360px
+		flex-flow: column
+		&:last-child
+			margin: 0 auto 0!important
+		&:nth-child(even) 
+			.destinations-img
+				order: 0
+		.destinations-img
+			position: relative
+			max-width: 100%
+		.img-wrap
+			position: relative
+			width: 100%
+			height: 146px
+			border-radius: 0
+			img
+				width: 100%
+				height: auto
+		.destinations-text
+			padding: 20px 20px 32px
+		.price
+			display: none
+		h2
+			font-size: 23px
+			padding-right: 0
+			margin-bottom: 15px
+		p
+			margin-bottom: 24px
+		.button
+			display: block
+			margin: 0 auto
+
+	.counters-sec
+		padding: 115px 0
+
+	.counters
+		span
+			font-size: 45px
+		p
+			font-size: 16px
+
+	.reviews.prev
+		flex-flow: column
+		align-items: stretch
+		.reviews-item
+			max-width: 100%
+			margin: 0 0 49px
+			&:last-child
+				margin: 0
+		p
+			font-size: 16px
+
+	.partners-sec
+		padding: 36px 0
+
+	.partners	.img-wrap
+		margin: 0 24px
+
+	.text-block .partners
+		margin-bottom: 36px
+
+	.contacts-form 
+		input[type=checkbox]+label
+			margin-top: 11px
+			font-size: 14px
+			background-position: 1px 4px
+
+	.footer
+		flex-flow: column
+		align-items: stretch
+		h5
+			margin-bottom: 24px
+		&-item
+			max-width: 100%
+			margin-bottom: 36px
+			text-align: center
+			&:nth-child(2)
+				li
+					display: inline-block
+					margin: 0 16px
+				a
+					margin-bottom: 9px
+			&:nth-child(3)
+				.contacts-row:last-child
+					.contacts-cell
+						display: block
+
+			&:last-child
+				margin-bottom: 0
+			.social
+				margin-bottom: 43px
+				a
+					margin: 0 7px!important
+			.contacts
+				display: block
+				&-row
+					display: table
+					margin: 0 auto
+
+				&-cell
+					display: inline-block
+			.button
+				display: block
+				max-width: 180px
+				margin: 0 auto 54px
+
+	.main-form
+		&-cell.label
+			display: none
+		&-cell.contacts
+			width: 294px
+		.label-inner
+			display: none
+		&-cell.common
+			.main-form-cell
+				padding-right: 10px
+				&:last-child
+					padding-right: 0
+		.check-auto
+			padding-bottom: 55px
+		.check-auto-item:first-child
+			margin-bottom: 58px
+
+		.pay-method
+			flex-direction: column
+			.pay-method-item
+				width: auto
+				max-width: 100%
+				.pay-method-label
+					width: auto
+	.destinations-inner-slider
+		height: 300px
+
+	.slider-slideshow
+		a:before
+			background-size: 56px
+			opacity: 0.3
+
+	.slider-next, .slider-prev
+		width: 32px
+		height: 56px
+
+	.slider-pager
+		bottom: -21px
+		max-width: 458px
+		.img-wrap
+			display: inline-block
+			width: 42px
+			height: 42px
+			border-radius: 50%	
+	
+	.destinations-inner-content
+		.text-block
+			padding-top: 78px
+			h2
+				font-size: 28px
+
+	.footer-bottom-line
+		text-align: center  
+
+
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px)
+	header
+		.topline
+			padding: 12px 0
+			.switch-lang-btn
+				.dropdown-content
+					top: 40px
+					left: -60px
+					&:before
+						left: auto
+						right: 32px
+			.menu
+				display: none
+			.toggle-btn
+				display: inline-block
+	
+	.tabs-controls
+		width: 100%
+		max-width: 660px
+		margin-left: auto!important
+		margin-right: auto!important
+		justify-content: space-between
+		&-item
+			line-height: 1.2!important
+			padding: 7px 8px!important
+			font-size: 13.5px!important
+			flex-grow: 1
+			i
+				font-size: 13.5px!important
+			&.discount
+				padding-right: 53px!important
+		.review-form-tab
+			margin-left: 1.5px!important
+	
+	.form-header
+		max-width: 660px
+		margin-left: auto!important
+		margin-right: auto!important
+		flex-direction: column
+		flex-wrap: no-wrap
+		align-content: stretch
+		label
+			margin-left: 0!important
+			margin-right: 0!important
+			margin-bottom: 4px
+			&.date
+				max-width: 100%!important
+			&.passengers
+				max-width: 100%!important
+				.dropdown-content
+					right: auto!important
+					&:before
+						right: auto!important
+						left: 31px!important
+
+	.form-content
+		.checkboxes
+			label
+				padding-left: 71px!important
+				padding-right: 15px
+				.checkbox
+					left: 20px!important
+	
+	.counters-sec
+		padding: 67px 0
+	.counters
+		flex-flow: column
+		align-items: center
+		&-item
+			margin: 0 0 36px 0
+			&:last-child
+				margin: 0
+		span
+			font-size: 42px
+			margin-bottom: 9px
+		p
+			font-size: 15px
+
+	.partners
+		justify-content: center
+		.img-wrap
+			line-height: 105px
+			margin: 0 74px 0
+
+	.form-content
+		.check-auto
+			padding: 44px 0!important
+
+	.check-auto
+		flex-flow: column
+	.check-auto-item
+		margin-right: auto!important
+		margin-left: auto!important
+		&:first-child
+			margin-bottom: 66px
+
+	.footer-item:nth-child(2)
+		ul
+			flex-flow: column
+			justify-content: flex-start
+			text-align: center
+
+	.destinations-inner-slider
+		height: 249px
+
+	.destinations-inner-content
+		.text-block
+			padding-top: 63px
+
+
+@media only screen and (max-width : 643px)
+	.slider-pager
+		max-width: 354px
+	.dest-categories
+		padding: 0
+		.button
+			font-size: 15px
+			background-repeat: 20.5px
+	
+@media only screen and (max-width : 619px)
+	.tabs-controls
+		flex-wrap: wrap
+	.tabs-controls-item
+		min-width: 34%	
+		font-size: 11.5px!important
+		i
+			display: none
+		&.discount
+			padding-left: 33px!important
+		
+		&:nth-child(1),
+		&:nth-child(3)
+			margin-left: 0!important
+			margin-right: 3px!important
+		&:nth-child(2),
+		&:nth-child(4)
+			margin-left: 0!important
+			margin-right: 0!important
+
+	.form-content
+		p
+			font-size: 15px
+		.checkboxes
+			label
+				font-size: 14px
+
+	.main-form
+		&-row
+			display: block
+		&-cell
+			display: block
+			width: 100%!important
+			padding-right: 0!important
+			input
+				max-width: 100%!important
+				&.promo
+					max-width: 268px
+	
+			
+	/*Disable Animation on Mobile Devices*/
+	.animated
+		/*CSS transitions*/
+		-o-transition-property: none !important
+		-moz-transition-property: none !important
+		-ms-transition-property: none !important
+		-webkit-transition-property: none !important
+		transition-property: none !important
+		/*CSS transforms*/
+		-o-transform: none !important
+		-moz-transform: none !important
+		-ms-transform: none !important
+		-webkit-transform: none !important
+		transform: none !important
+		/*CSS animations*/
+		-webkit-animation: none !important
+		-moz-animation: none !important
+		-o-animation: none !important
+		-ms-animation: none !important
+		animation: none !important
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px)
+	.main-form
+		.topline
+			label
+				margin-right: 7px
+				width: 48%
+				max-width: 48%
+				font-size: 14px
+				padding: 8px 5px 9px
+		.check-auto-item
+			.img-wrap
+				label:after
+					left: 0
+					right: 0
+					top: auto!important
+					bottom: -3px
+					margin: 0 auto
+				input[type=radio]:checked + label:after
+					transform: scale(8)!important
+		.pay-method
+			.pay-method-label
+				font-size: 11px
+
+	.text-block
+		padding: 30px 24px
+
+	.pagination
+		.page-item
+			margin-right: 1px
+			margin-left: 1px
+			width: 36px
+			height: 36px
+			padding-top: 12px
+			&.dots span
+				width: 5px
+				height: 5px
+				top: 12px
+				margin-right: 1px
+		a
+			font-size: 13px!important
+		i
+			font-size: 9px
+			top: -1px
+	
+	.destinations-inner-slider
+		height: 201px
+
+	.destinations-inner-content
+		.text-block
+			padding-top: 38px
+			h2
+				font-size: 26px
+
+	.slider-pager
+		display: none!important
+
+	.contacts-form 
+		input[type=checkbox]+label
+			font-size: 13px
+
+
+@media only screen and (max-width : 375px)
+	.popup-form
+		p
+			font-size: 13px
+		input[type=checkbox] + label
+			font-size: 13px
+
+@media only screen and (max-width : 351px)
+	.tabs-controls-item
+		font-size: 10.5px!important
+		&.discount
+			span
+				font-size: 15px!important
+	.main-form
+		.topline
+			label
+				margin-right: 7px
+				width: 47%
+				max-width: 47%
+		.check-auto-item
+			&-topline
+				padding: 11px 120px 5px 15px
+			h2
+				font-size: 12px
+			&-price
+				span
+					font-size: 16px
+			.img-wrap
+				height: 134px
+	.footer
+		.contacts
+			.contacts-cell
+				&.light
+					padding-right: 5px
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px)
+	/**/
+
+
+/*==========  Mobile First Method  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px)
+	/**/
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px)
+	/**/
+
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px)
+	/**/
+
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px)
+	/**/
+
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px)
+	/**/
+
