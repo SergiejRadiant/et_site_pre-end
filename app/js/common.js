@@ -485,8 +485,8 @@ $(function() {
     //$("").append(cloned_slider_items);
 
     $(".destinations-inner-slider .slider-pager").slick({
-      slidesToShow: 9,
-      slidesToScroll: 9,
+      slidesToShow: 7,
+      slidesToScroll: 7,
       asNavFor: ".destinations-inner-slider .slider-slideshow",
       dots: false,
       arrows: false,

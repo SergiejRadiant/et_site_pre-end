@@ -251,8 +251,9 @@ body textarea:required:valid
 		margin: auto 0
 		overflow: hidden
 		img
-			height: 100%
+			height: 54%
 			width: auto
+			margin: 23% -50%
 	.button
 		width: 100%
 		max-width: 168px
@@ -260,7 +261,8 @@ body textarea:required:valid
 		.destinations-img
 			order: 1
 			.img-wrap
-				left: 0
+				left: 0!important
+				right: auto!important
 		
 
 .destinations-prevs
@@ -283,12 +285,15 @@ body textarea:required:valid
 			height: 100%
 			max-height: 146px
 		.img-wrap
+			display: flex
+			align-items: center
 			position: relative
 			width: 100%
 			border-radius: 0
 			img
 				width: 100%
 				height: auto
+				margin: 0
 		.destinations-text
 			padding: 20px 20px 80px
 			flex-grow: 1
@@ -684,8 +689,10 @@ body textarea:required:valid
 			width: 100%
 			max-width: 258px
 		&.transfer-time
+			width: 230px
+		&.phone
 			width: 100%
-			max-width: 230px
+			max-width: 323px
 		&.phone
 			width: 100%
 			max-width: 323px
@@ -1018,7 +1025,6 @@ body textarea:required:valid
 	margin: 0 auto
 	text-align: center
 	z-index: 1000
-	width: 100%
 	max-width: 816px
 	.img-wrap
 		display: inline-block
