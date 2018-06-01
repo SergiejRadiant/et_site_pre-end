@@ -5,7 +5,7 @@
 
 	<meta charset="utf-8">
 
-	<title>Направление</title>
+	<title>Заказать трансфер</title>
 	<meta name="description" content="">
 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -98,7 +98,7 @@
 									<a href="index.html">Главная</a>
 								</li>
 								<li>
-									<a href="destinations.html" class="active">Популярные направления</a>
+									<a href="destinations.html">Популярные направления</a>
 								</li>
 								<li>
 									<a href="about-us.html">О нас</a>
@@ -134,7 +134,6 @@
 	
 				<!-- tabs-container -->
 				<div class="tabs-container">
-	
 					<!-- tabs-controls -->
 					<div class="tabs-controls">
 						<div class="tabs-controls-item discount active">Туда и обратно
@@ -186,10 +185,7 @@
 	
 										<!-- dropdown-content -->
 										<div class="dropdown-content">
-	
-											<input type="hidden" name="Children" value="0">
-											<input type="hidden" name="Adults" value="0">
-	
+
 											<div class="count-passengers">
 												<h6>Взрослые</h6>
 												<div class="counter" data-input="Adults">
@@ -199,20 +195,46 @@
 													<div class="dec btn">-</div>
 												</div>
 											</div>
-	
+
 											<div class="count-passengers">
-												<h6> Дети
-													<span>
-														< 12 лет </span>
-												</h6>
-												<div class="counter" data-input="Children">
+
+												<h6> Дети <span> 0-9 кг </span> </h6>
+
+												<div class="counter" data-input="Children0_9">
 													<i class="icon-man"></i>
-													<input type="text" disabled="" name="Children" value="0">
+													<input type="text" disabled="" name="Children0_9" value="0">
 													<div class="inc btn">+</div>
 													<div class="dec btn">-</div>
 												</div>
+
 											</div>
-	
+
+											<div class="count-passengers">
+
+												<h6> Дети <span> 9-18 кг </span> </h6>
+
+												<div class="counter" data-input="Children9_18">
+													<i class="icon-man"></i>
+													<input type="text" disabled="" name="Children9_18" value="0">
+													<div class="inc btn">+</div>
+													<div class="dec btn">-</div>
+												</div>
+
+											</div>
+
+											<div class="count-passengers">
+
+												<h6> Дети <span> 18-36 кг </span> </h6>
+
+												<div class="counter" data-input="Children18_36">
+													<i class="icon-man"></i>
+													<input type="text" disabled="" name="Children18_36" value="0">
+													<div class="inc btn">+</div>
+													<div class="dec btn">-</div>
+												</div>
+
+											</div>
+
 										</div>
 										<!-- dropdown-content -->
 	
@@ -251,7 +273,7 @@
 									
 											</div>
 									
-											<div class="img-wrap check-auto-slider">
+											<div class="img-wrap slick-slider-auto">
 									
 												<a href="#">
 													<span class="mark">BMW X6</span>
@@ -295,7 +317,7 @@
 									
 											</div>
 									
-											<div class="img-wrap check-auto-slider">
+											<div class="img-wrap slick-slider-auto">
 									
 												<a href="#">
 													<span class="mark">BMW X6</span>
@@ -320,6 +342,7 @@
 									
 									</div>
 									<!-- check-auto -->
+									
 								</div>
 								<!-- form-content -->
 	
@@ -450,9 +473,6 @@
 				</a>
 				<span>></span>
 	
-				<a href="destinations.html">Популярные направления</a>
-				<span>></span>
-
 				<span>Название направления</span>
 			</nav>
 	
@@ -462,323 +482,416 @@
 	
 	</section>
 	
-	<main class="destinations-inner-content">
+	<main>
 		
 		<div class="container">
 
-			<!-- destinations-inner-slider -->
-			<div class="destinations-inner-slider">
-
-				<div class="slider-slideshow">
-				
-					<div class="img-wrap">
-						<img src="../img/destinations-slider/prev/1.jpg" alt="#">
-					</div>
-				
-					<div class="img-wrap">
-						<img src="../img/destinations-slider/prev/2.jpg" alt="#">
-					</div>
-				
-					<div class="img-wrap">
-						<img src="../img/destinations-slider/prev/3.jpg" alt="#">
-					</div>
-					
-					<div class="img-wrap">
-						<img src="../img/destinations-slider/prev/1.jpg" alt="#">
-					</div>
-					
-					<div class="img-wrap">
-						<img src="../img/destinations-slider/prev/2.jpg" alt="#">
-					</div>
-					
-					<div class="img-wrap">
-						<img src="../img/destinations-slider/prev/3.jpg" alt="#">
-					</div>
-					
-					<div class="slider-prev"></div>
-					<div class="slider-next"></div>
-
-				</div>
-				
-				<div class="slider-pager">
-
-					<div class="img-wrap">
-						<img src="../img/destinations-slider/prev/1.jpg" alt="#">
-					</div>
-				
-					<div class="img-wrap">
-						<img src="../img/destinations-slider/prev/2.jpg" alt="#">
-					</div>
-				
-					<div class="img-wrap">
-						<img src="../img/destinations-slider/prev/3.jpg" alt="#">
-					</div>
-
-					<div class="img-wrap">
-						<img src="../img/destinations-slider/prev/1.jpg" alt="#">
-					</div>
-				
-					<div class="img-wrap">
-						<img src="../img/destinations-slider/prev/2.jpg" alt="#">
-					</div>
-				
-					<div class="img-wrap">
-						<img src="../img/destinations-slider/prev/3.jpg" alt="#">
-					</div>
-
-				</div>
-
-			</div>
-			<!-- destinations-inner-slider -->
-	
 			<div class="text-block">
+
+				<form action="#" class="main-form">
+
+					<div class="main-form-row">
+
+						<div class="main-form-cell label">Откуда:</div>
+
+						<div class="main-form-cell large">
+							<label>
+								<i class="icon-map-mark"></i>
+								<input class="geo autocomplate" type="text" class="geo" placeholder="Откуда: Аэропорт, вокзал, отель...">
+							</label>
+						</div>
+
+					</div>
+
+					<div class="main-form-row">
+					
+						<div class="main-form-cell label">
+							Номер рейса:
+						</div>
+					
+						<div class="main-form-cell">
+							<label>
+								<i class="icon-plane"></i>
+								<input type="text" class="flight-num" placeholder="Номер рейса">
+								<i class="icon-info info" title="Lorem, ipsum dolor sit amet consectetur adipisicing.">
+								</i>
+							</label>
+						</div>
+					
+					</div>
+
+
+					<div class="main-form-row">
+
+						<div class="main-form-cell label">
+							Дата трансфера:
+						</div>
+
+						<div class="main-form-cell common">
+
+							<div class="main-form-cell">
+								<label>
+									<i class="icon-calendar"></i>
+									<input class="date datepicker" type="text" placeholder="Дата трансфера">
+								</label>
+							</div>
+
+							<div class="main-form-cell label-inner">
+								Время трансфера:
+							</div>
+
+							<div class="main-form-cell">
+								<label>
+									<i class="icon-clock"></i>
+									<input id="transfer-time" type="text" class="transfer-time" placeholder="Время трансфера">
+								</label>
+							</div>
+
+						</div>
+
+					</div>
+
+					<div class="main-form-row">
+
+						<div class="main-form-cell label">
+							Пассажиры:
+						</div>
+
+						<div class="main-form-cell">
+
+							<div class="passengers dropdown">
+
+								<div class="stub"></div>
+
+								<i class="icon-man"></i>
+								Взрослые:
+								<div class="input-wrap">
+									<input type="text" name="Display_Adults" placeholder="3" required="">
+								</div>
+								Дети:
+								<div class="input-wrap">
+									<input type="text" name="Display_Children" placeholder="3" required="">
+								</div>
+								
+								<!-- dropdown-content -->
+								<div class="dropdown-content">
+
+									<div class="count-passengers">
+										<h6>Взрослые</h6>
+										<div class="counter" data-input="Adults">
+											<i class="icon-man"></i>
+											<input type="text" disabled="" name="Adults" value="0">
+											<div class="inc btn">+</div>
+											<div class="dec btn">-</div>
+										</div>
+									</div>
+
+									<div class="count-passengers">
+
+										<h6> Дети <span> 0-9 кг </span> </h6>
+
+										<div class="counter" data-input="Children0_9">
+											<i class="icon-man"></i>
+											<input type="text" disabled="" name="Children0_9" value="0">
+											<div class="inc btn">+</div>
+											<div class="dec btn">-</div>
+										</div>
+
+									</div>
+
+									<div class="count-passengers">
+
+										<h6> Дети <span> 9-18 кг </span> </h6>
+
+										<div class="counter" data-input="Children9_18">
+											<i class="icon-man"></i>
+											<input type="text" disabled="" name="Children9_18" value="0">
+											<div class="inc btn">+</div>
+											<div class="dec btn">-</div>
+										</div>
+
+									</div>
+
+									<div class="count-passengers">
+
+										<h6> Дети <span> 18-36 кг </span> </h6>
+
+										<div class="counter" data-input="Children18_36">
+											<i class="icon-man"></i>
+											<input type="text" disabled="" name="Children18_36" value="0">
+											<div class="inc btn">+</div>
+											<div class="dec btn">-</div>
+										</div>
+
+									</div>
+
+								</div>
+								<!-- dropdown-content -->
+
+							</div>
+
+							
+
+						</div>
+
+					</div>
+
+					<div class="main-form-row">
+						<div class="mein-form-cell label">Тип авто:</div>
+					</div>
+
+
+					<div class="check-auto">
+
+						<div class="check-auto-item">
+							<div class="check-auto-item-topline">
+								<h2>Бизнес-класс</h2>
+								<ul>
+									<li>
+										<i class="icon-man"></i>3</li>
+									<li>
+										<i class="icon-case"></i>3</li>
+								</ul>
+								<div class="check-auto-item-price">
+									<span>от 23 000 &euro;</span>
+								</div>
+							</div>
+							<div class="img-wrap">
+								<input type="radio" name="check-auto-radio" id="check-auto-1" value="check-auto-1">
+								<label for="check-auto-1">
+
+									<ul class="check-auto-slider">
+										<li href="#">
+											<span class="mark">BMW X6</span>
+											<img src="img/check-auto/1.jpg" alt="Бизнесс класс">
+										</li>
+									
+										<li href="#">
+											<span class="mark">Mersedes Bens S500</span>
+											<img src="img/check-auto/2.jpg" alt="Бизнесс класс">
+										</li>
+									
+										<li href="#">
+											<span class="mark">Audi A8</span>
+											<img src="img/check-auto/3.jpg" alt="Бизнесс класс">
+										</li>
+									</ul>
+
+								</label>
+							</div>
+						</div>
+					
+						<div class="check-auto-item">
+							<div class="check-auto-item-topline">
+								<h2>Бизнес-класс</h2>
+								<ul>
+									<li>
+										<i class="icon-man"></i>3</li>
+									<li>
+										<i class="icon-case"></i>3</li>
+								</ul>
+								<div class="check-auto-item-price">
+									<span>от 23 000 &euro;</span>
+								</div>
+							</div>
+							<div class="img-wrap">
+								<input type="radio" name="check-auto-radio" id="check-auto-2" value="check-auto-2">
+								<label for="check-auto-2">
+									
+									<ul class="check-auto-slider">
+										<li href="#">
+											<span class="mark">BMW X6</span>
+											<img src="img/check-auto/1.jpg" alt="Бизнесс класс">
+										</li>
+									
+										<li href="#">
+											<span class="mark">Mersedes Bens S500</span>
+											<img src="img/check-auto/2.jpg" alt="Бизнесс класс">
+										</li>
+									
+										<li href="#">
+											<span class="mark">Audi A8</span>
+											<img src="img/check-auto/3.jpg" alt="Бизнесс класс">
+										</li>
+									</ul>
+									
+								</label>
+							</div>
+						</div>
+						
+					</div>
+
+
+					<div class="main-form-row">
+
+						<div class="main-form-cell label">
+							Ваше имя:
+						</div>
+
+						<div class="main-form-cell large">
+							<label>
+								<i class="icon-man"></i>
+								<input type="text" class="name" placeholder="Ваше имя">
+							</label>
+						</div>
+
+					</div>
+
+					<div class="main-form-row">
+
+						<div class="main-form-cell label">
+							Телефон:
+						</div>
+
+						<div class="main-form-cell common">
+
+							<div class="main-form-cell contacts phone">
+								<label for="phone">
+									<i class="icon-phone"></i>
+									<input id="phone" type="phone" class="phone" placeholder="Телефон">
+								</label>
+							</div>
+
+							<div class="main-form-cell label-inner">
+								E-mail:
+							</div>
+
+							<div class="main-form-cell contacts">
+								<label>
+									<i class="icon-mail" placeholder="E-mail"></i>
+									<input type="email" class="email" placeholder="E-mail">
+								</label>
+							</div>
+
+						</div>
+
+					</div>
+
+					<div class="main-form-row">
+						<div class="main-form-cell label">
+							Способ оплаты:
+						</div>
+					</div>
+
+					<div class="pay-method">
+
+						<div class="pay-method-item">
+
+							<input id="pay-driver-cash" type="radio" name="pay-method">
+
+							<label for="pay-driver-cash" class="pay-method-label">
+								<div class="pay-method-radio"></div>
+								 <div class="text-wrap"> Оплата картой
+								 водителю
+								</div>
+							</label>
+
+						</div>
+
+						<div class="pay-method-item dropdown">
+
+							<input id="pay-driver-card" type="radio" name="pay-method">
+
+							<label for="pay-driver-card" class="pay-method-label">
+								<div class="pay-method-radio"></div>
+							
+								<div class="img-wrap">
+									<img src="" alt="">
+								</div>
+						
+								<div class="text-wrap">
+									Оплата картой 
+									<span></span> водителю
+								</div>
+							</label>
+
+							<div class="dropdown-content">
+
+									<input 	type="radio" name="pay-method-card" id="pay-driver-visa" 
+									
+									data-img="../img/pay-methods/visa.svg" 
+									data-alt="Visa">
+
+									<label for="pay-driver-visa">
+										<img src="../img/pay-methods/visa.svg" alt="Visa">
+										Visa
+									</label>
+
+									<input type="radio" name="pay-method-card" id="pay-driver-mc" 
+									
+									data-img="../img/pay-methods/mc.svg" 
+									data-alt="MasterCard">
+
+									<label for="pay-driver-mc">
+										<img src="../img/pay-methods/mc.svg" alt="MasterCard"> 
+										MasterCard
+									</label>
+
+									<input type="radio" name="pay-method-card" id="pay-driver-ae" 
+									
+									data-img="../img/pay-methods/ae.svg" 
+									data-alt="American Express">
+
+									<label for="pay-driver-ae">
+										<img src="../img/pay-methods/ae.svg" alt="American Express"> 
+										American Express
+									</label>
+
+							</div>
+
+						</div>
+
+						<div class="pay-method-item">
+						
+							<input id="pay-pp" type="radio" name="pay-method">
+						
+							<label for="pay-pp" class="pay-method-label">
+								<div class="pay-method-radio"></div>
+							
+								<div class="img-wrap">
+									<img src="../img/pay-methods/pp.svg" alt="PayPal">
+								</div>
+								
+								<div class="text-wrap">
+									Оплата картой	PayPal
+								</div>
+							</label>
+						
+						</div>
+
+					</div>
+
+					<div class="main-form-row">
+						<div class="main-form-cell label">
+							Комментарий:
+						</div>
+
+						<div class="main-form-cell large">
+							<textarea name="main-form-comment" placeholder="Комментарий"></textarea>
+						</div>
+					</div>
+
+					<div class="main-form-row">
+						<div class="main-form-cell label">
+							Промо-код:
+						</div>
+
+						<div class="main-form-cell">
+							<input type="text" class="promo" placeholder="Промо-код">
+						</div>
+					</div>
+
+					<div class="btn-wrap">
+						<button class="button large">Отправить</button>
+					</div>
+
+				</form>
 				
-				<h2>Название направления</h2>
-
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-					Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-					dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-					non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error
-					sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
-				</p>
-
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-					Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-					dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-					non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error
-					sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
-				</p>
-
-				<h4>Заголовок небольшой</h4>
-
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-					Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-					dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-					non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error
-					sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
-				</p>
-
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-					Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-					dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-					non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error
-					sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
-				</p>
-
 			</div>
-		
+			
 		</div>	
 	
 	</main>
-
-	<section class="destination-tips">
-	
-		<div class="container">
-
-			<h3>Заказать прямо сейчас</h3>
-	
-			<!-- check-auto -->
-			<div class="check-auto">
-
-				<div class="check-auto-item-wrap">
-						<div class="check-auto-item">
-						<div class="check-auto-item-topline">
-							<h2>Бизнес-класс</h2>
-							<ul>
-								<li>
-									<i class="icon-man"></i>3</li>
-								<li>
-									<i class="icon-case"></i>3</li>
-							</ul>
-							<div class="check-auto-item-price">
-								<span>от 23 000 &euro;</span>
-							</div>
-						</div>
-						<div class="img-wrap">
-							<input type="radio" name="check-auto-radio" id="check-auto-1" value="check-auto-1">
-							<label for="check-auto-1">
-
-								<ul class="check-auto-slider">
-									<li href="#">
-										<span class="mark">BMW X6</span>
-										<img src="img/check-auto/1.jpg" alt="Бизнесс класс">
-									</li>
-								
-									<li href="#">
-										<span class="mark">Mersedes Bens S500</span>
-										<img src="img/check-auto/2.jpg" alt="Бизнесс класс">
-									</li>
-								
-									<li href="#">
-										<span class="mark">Audi A8</span>
-										<img src="img/check-auto/3.jpg" alt="Бизнесс класс">
-									</li>
-								</ul>
-
-							</label>
-						</div>
-					</div>
-					<div class="text-block">
-						<p></p>
-						<h4>Lorem, ipsum dolor.</h4>
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus accusamus eum porro atque nesciunt, delectus earum ducimus explicabo! Molestias repudiandae magnam, iusto nesciunt eum sit!</p>
-						<h4>Lorem, ipsum.</h4>
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel iure asperiores sint enim at!</p>
-					</div>
-				</div>
-
-				<div class="check-auto-item-wrap">
-						<div class="check-auto-item">
-						<div class="check-auto-item-topline">
-							<h2>Бизнес-класс</h2>
-							<ul>
-								<li>
-									<i class="icon-man"></i>3</li>
-								<li>
-									<i class="icon-case"></i>3</li>
-							</ul>
-							<div class="check-auto-item-price">
-								<span>от 23 000 &euro;</span>
-							</div>
-						</div>
-						<div class="img-wrap">
-							<input type="radio" name="check-auto-radio" id="check-auto-2" value="check-auto-2">
-							<label for="check-auto-2">
-								
-								<ul class="check-auto-slider">
-									<li href="#">
-										<span class="mark">BMW X6</span>
-										<img src="img/check-auto/1.jpg" alt="Бизнесс класс">
-									</li>
-								
-									<li href="#">
-										<span class="mark">Mersedes Bens S500</span>
-										<img src="img/check-auto/2.jpg" alt="Бизнесс класс">
-									</li>
-								
-									<li href="#">
-										<span class="mark">Audi A8</span>
-										<img src="img/check-auto/3.jpg" alt="Бизнесс класс">
-									</li>
-								</ul>
-								
-							</label>
-						</div>
-					</div>
-
-					<div class="text-block">
-						<ul>
-							<li></li>
-							<li>Lorem ipsum dolor sit amet consectetur adipisicing.</li>
-							<li>Lorem ipsum dolor sit amet.</li>
-							<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, quisquam repellat.</li>
-							<li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-							<li>Lorem ipsum dolor sit amet consectetur adipisicing.</li>
-							<li>Lorem ipsum dolor sit amet.</li>
-							<li>Lorem ipsum dolor sit amet consectetur adipisicing.</li>
-						</ul>
-					</div>
-				</div>
-			
-				<div class="btn-wrap">
-					<button class="button large">Заказать трансфер</button>
-				</div>
-				
-			</div>
-			<!-- check-auto -->
-	
-		</div>
-		
-	</section>
-
-	<section class="grey">
-	
-		<div class="container">
-	
-			<h3>Другие направления</h3>
-	
-			<div class="destinations-prevs">
-	
-				<div class="destinations-item">
-	
-					<div class="destinations-img">
-	
-						<div class="img-wrap">
-							<img src="img/destinations-prevs/destination-example-prev.jpg" alt="">
-						</div>
-					</div>
-	
-					<div class="destinations-text">
-						<h2>Название направления</h2>
-	
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, cumque laboriosam? Quidem possimus, et odio consequuntur
-							earum officia explicabo? Nisi cum tempore odio aperiam, id magnam exercitationem dolores blanditiis sapiente provident
-							corporis fugiat perspiciatis dicta.</p>
-	
-						<a href="#" class="button lite">Подробнее</a>
-	
-					</div>
-	
-	
-				</div>
-	
-				<div class="destinations-item">
-	
-					<div class="destinations-img">
-	
-						<div class="img-wrap">
-							<img src="img/destinations-prevs/destination-example-prev.jpg" alt="">
-						</div>
-					</div>
-	
-					<div class="destinations-text">
-						<h2>Название направления</h2>
-	
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, cumque laboriosam? Quidem possimus, et odio consequuntur
-							earum officia explicabo? Nisi cum tempore odio aperiam, id magnam exercitationem dolores blanditiis sapiente provident
-							corporis fugiat perspiciatis dicta.</p>
-	
-						<a href="#" class="button lite">Подробнее</a>
-	
-					</div>
-	
-	
-				</div>
-	
-				<div class="destinations-item">
-	
-					<div class="destinations-img">
-	
-						<div class="img-wrap">
-							<img src="img/destinations-prevs/destination-example-prev.jpg" alt="">
-						</div>
-					</div>
-	
-					<div class="destinations-text">
-						<h2>Название направления</h2>
-	
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, cumque laboriosam? Quidem possimus, et odio consequuntur
-							earum officia explicabo? Nisi cum tempore odio aperiam, id magnam exercitationem dolores blanditiis sapiente provident
-							corporis fugiat perspiciatis dicta.</p>
-	
-						<a href="#" class="button lite">Подробнее</a>
-	
-					</div>
-	
-	
-				</div>
-	
-			</div>
-	
-			<a href="#" class="button large">Все направления</a>
-	
-		</div>
-	
-	</section>
 
 	<footer>
 		<div class="container">

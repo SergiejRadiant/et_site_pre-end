@@ -34,15 +34,14 @@
 			.img-wrap
 				height: 212px
 
-	.main-form
-		&-cell.label,
-		&-cell.label-inner
-			font-size: 15px
-		&-cell.contacts
-			width: 281px
+	.check-auto-item-wrap
+		margin: 19px 0
+
+	.main-form,
+	.destination-tips
+		.text-block
+			padding: 0 43px
 		.check-auto-item
-			margin-left: 45px
-			margin-right: 27px
 			max-width: 316px
 			&-topline
 				padding: 11px 145px 8px 15px
@@ -68,13 +67,22 @@
 				input[type="radio"]:checked + label:after
 					transform: scale(9)
 					top: 29px
+
+	.main-form
+		.check-auto-item
+			margin-left: 45px
+			margin-right: 27px
+		&-cell.label,
+		&-cell.label-inner
+			font-size: 15px
+		&-cell.contacts
+			width: 281px		
 		.pay-method
 			.pay-method-label
 				font-size: 12px
 				.pay-method-radio
 					width: 15px
 					height: 15px
-
 
 	.how-we-work-item
 		max-width: 184px
@@ -97,7 +105,7 @@
 			p
 				font-size: 15px
 
-	.reviews.prev
+	.reviews.preview
 		p
 			font-size: 15px
 	
@@ -131,7 +139,6 @@
 	
 	.slider-pager
 		bottom: -33px
-		max-width: 739px
 		.img-wrap
 			width: 97px
 			height: 71px
@@ -143,6 +150,11 @@
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 991px)
+	body
+		font-size: 15px
+	.text-block
+		li
+			padding-left: 30px
 	h1
 		font-size: 19px
 	header
@@ -156,8 +168,6 @@
 				.lang-icon
 					width: 18px
 					height: 11px
-				.dropdown-icon
-					width: 7.38px
 			.menu
 				ul
 					li
@@ -305,7 +315,7 @@
 		p
 			font-size: 16px
 
-	.reviews.prev
+	.reviews.preview
 		flex-flow: column
 		align-items: stretch
 		.reviews-item
@@ -370,7 +380,21 @@
 				max-width: 180px
 				margin: 0 auto 54px
 
+	.destination-tips,
 	.main-form
+		.check-auto-item
+			margin-left: 0
+			margin-bottom: 19px
+	.check-auto-item-wrap
+		flex-flow: column
+
+	.main-form
+		.passengers
+			font-size: 15px
+		.check-auto
+			padding-bottom: 55px
+		.check-auto-item:first-child
+			margin-bottom: 58px
 		&-cell.label
 			display: none
 		&-cell.contacts
@@ -381,11 +405,7 @@
 			.main-form-cell
 				padding-right: 10px
 				&:last-child
-					padding-right: 0
-		.check-auto
-			padding-bottom: 55px
-		.check-auto-item:first-child
-			margin-bottom: 58px
+					padding-right: 0		
 
 		.pay-method
 			flex-direction: column
@@ -408,7 +428,6 @@
 
 	.slider-pager
 		bottom: -21px
-		max-width: 458px
 		.img-wrap
 			display: inline-block
 			width: 42px
@@ -514,14 +533,14 @@
 	.form-content
 		.check-auto
 			padding: 44px 0!important
-
-	.check-auto
-		flex-flow: column
-	.check-auto-item
-		margin-right: auto!important
-		margin-left: auto!important
-		&:first-child
-			margin-bottom: 66px
+	.main-form
+		.check-auto
+			flex-flow: column
+		.check-auto-item
+			margin-right: auto!important
+			margin-left: auto!important
+			&:first-child
+				margin-bottom: 66px
 
 	.footer-item:nth-child(2)
 		ul
@@ -534,8 +553,6 @@
 
 
 @media only screen and (max-width : 643px)
-	.slider-pager
-		max-width: 354px
 	.dest-categories
 		padding: 0
 		.button
@@ -606,14 +623,8 @@
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
-	.main-form
-		.topline
-			label
-				margin-right: 7px
-				width: 48%
-				max-width: 48%
-				font-size: 14px
-				padding: 8px 5px 9px
+	.main-form,
+	.destination-tips
 		.check-auto-item
 			.img-wrap
 				label:after
@@ -624,12 +635,25 @@
 					margin: 0 auto
 				input[type=radio]:checked + label:after
 					transform: scale(8)!important
+
+	.main-form
+		.topline
+			label
+				margin-right: 7px
+				font-size: 13px
+				padding: 8px 5px 9px	
 		.pay-method
 			.pay-method-label
 				font-size: 11px
 
 	.text-block
 		padding: 30px 33px
+
+	.destination-tips
+		.text-block
+			padding-top: 25px
+			padding-left: 0
+			padding-right: 0
 
 	.pagination
 		.page-item
@@ -674,17 +698,8 @@
 			font-size: 13px
 
 @media only screen and (max-width : 351px)
-	.tabs-controls-item
-		font-size: 10.5px!important
-		&.discount
-			span
-				font-size: 15px!important
-	.main-form
-		.topline
-			label
-				margin-right: 7px
-				width: 47%
-				max-width: 47%
+	.main-form,
+	.destination-tips
 		.check-auto-item
 			&-topline
 				padding: 11px 120px 5px 15px
@@ -695,6 +710,17 @@
 					font-size: 16px
 			.img-wrap
 				height: 134px
+	.tabs-controls-item
+		font-size: 10.5px!important
+		&.discount
+			span
+				font-size: 15px!important
+	.main-form
+		.topline
+			label
+				margin-right: 7px
+				width: 47%
+				max-width: 47%		
 	.footer
 		.contacts
 			.contacts-cell

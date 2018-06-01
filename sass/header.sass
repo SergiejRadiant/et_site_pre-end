@@ -354,7 +354,8 @@ body
 			min-width: 0
 			padding: 10px 20px 14px 20px
 			text-align: left
-			&:before
+			&:before,
+			&:after
 				left: auto
 				right: 24px
 			.count-passengers
@@ -433,19 +434,26 @@ body
 	border-radius: 5px
 	margin-bottom: 0
 	color: #716e6e
+	border: 1px solid rgba(0,0,0,.10)
 	background-color: #fff
-	box-shadow: 1px 1px 3px rgba(0,0,0,.34)
+	box-shadow: 1px 1px 3px rgba(0,0,0,.25)
 	z-index: 1000
-	&:before
+	&:before,
+	&:after
 		content: ''
 		position: absolute
-		top: -12px
-		left: 31px
-		border: 6px solid transparent
-		border-bottom: 6px solid #f5f2f5
 		display: block
 		width: 0
 		height: 0
+		left: 31px
+	&:before
+		top: -14px
+		border: 7px solid transparent	
+		border-bottom: 7px solid rgba(0,0,0,.10)		
+	&:after
+		top: -12px
+		border: 6px solid transparent	
+		border-bottom: 6px solid #fff
 	input
 		display: none
 	a, label
@@ -480,12 +488,13 @@ body
 		display: block
 
 .pac-container
-	margin-top: 5px
+	margin-top: 4px
 	position: relative
 	overflow: visible
 	border: 0
 	border-radius: 5px
-	box-shadow: 1px 1px 3px rgba(0,0,0,.34)
+	border: 1px solid rgba(0,0,0,.1)
+	box-shadow: 1px 1px 3px rgba(0,0,0,.25)
 	&:before
 		content: ''
 		position: absolute
@@ -514,11 +523,12 @@ body
 		line-height: 31px
 
 .ui-datepicker
-	margin-top: 5px
+	margin-top: 4px
 	border-radius: 0
 	padding: 0
 	z-index: 100!important
-	box-shadow: 1px 1px 3px rgba(0,0,0,.34)
+	border: 1px solid rgba(0,0,0,.1)
+	box-shadow: 1px 1px 3px rgba(0,0,0,.25)
 	&:before
 		content: ''
 		position: absolute
@@ -698,18 +708,14 @@ header
 				width: 23px
 				height: 14px
 				opacity: 1
-				margin-right: 6px
 				box-shadow: 0 0 5px rgba(0,0,0,.36)
-			.dropdown-icon
-				width: 9.38px
-				height: 3.75px
-				opacity: 0.5
-				margin-right: 6px
 			.dropdown-content
 				top: 40px
+				left: -21px
 				a
 					text-decoration: none
-				&:before
+				&:before,
+				&:after
 					left: 25px
 
 		.menu

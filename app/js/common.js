@@ -4,33 +4,18 @@ $(function() {
     event.preventDefault();
   });
 
-  $("form").submit(function(){ return false});
+	$("form").submit(function(){ return false});
+	
 
   /*** a slider for cars ***/
 
-  function initCarsSliders(){
-    $('.slick-slider-auto').slick({
-      dots: false,
-      arrows: false,
-      infinite: true,
-      speed: 500,
-      autoplay: true,
-      autoplaySpeed: 3000,
-      fade: true,
-      cssEase: 'linear'
-    });
-  }
+	$('.check-auto-slider').cycle({
+		slides: '>*'
+	});
 
-  function reinitCarsSliders(){
-    $(".slick-slider-auto").slick('unslick');
-    initCarsSliders();
-  }
-
-  initCarsSliders();
-
-
-  /***  a slider for cars ***/ 
-
+	/***  a slider for cars ***/ 
+	
+	
   /***** dropdowns ****/
 
   function findAncestor (el, cls) {
@@ -470,29 +455,32 @@ $(function() {
 
   /*** a slider for the destination ***/
 
-    //var cloned_slider_items = $("").clone();
+	const CAROUSEL_MAX_SLIDES = 7;
 
-    $('.destinations-inner-slider .slider-slideshow').slick({
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      arrows: true,
-      prevArrow: ".destinations-inner-slider .slider-prev",
-      nextArrow: ".destinations-inner-slider .slider-next",
-      fade: true,
-      asNavFor: '.destinations-inner-slider .slider-pager'
+	function getCarouselVisible() {
+		const IMAGES = $(".slider-pager .img-wrap").length;
+		return (IMAGES < CAROUSEL_MAX_SLIDES) ? IMAGES : CAROUSEL_MAX_SLIDES
+	}
+
+	$(".slider-slideshow").cycle({ slides: '> .img-wrap', timeout: 0, prev: '.slider-prev', next: '.slider-next' });
+
+	$(".slider-pager").cycle({ 
+		slides: '> .img-wrap', 
+		timeout: 0, 
+		fx: 'carousel', 
+		carouselVisible: getCarouselVisible(),
+		allowWrap: false,
+		slideActiveClass: 'slider-active'
     });
 
-    //$("").append(cloned_slider_items);
+	var slideshows = $('.slider-slideshow, .slider-pager').on('cycle-next cycle-prev', function (e, opts) {
+		// advance the other slideshow
+		slideshows.not(this).cycle('goto', opts.currSlide);
+	});
 
-    $(".destinations-inner-slider .slider-pager").slick({
-      slidesToShow: 7,
-      slidesToScroll: 7,
-      asNavFor: ".destinations-inner-slider .slider-slideshow",
-      dots: false,
-      arrows: false,
-      centerMode: true,
-      focusOnSelect: true,
-      variableWidth: true
+	$('.slider-pager .cycle-slide').click(function () {
+		var index = $('.slider-pager').data('cycle.API').getSlideIndex(this);
+		slideshows.cycle('goto', index);
     });
 
   /***  a slider for the destination ***/
@@ -504,5 +492,9 @@ $(function() {
     removalDelay: 300
   });
 
+	if($("input").is(".transfer-time")) {
+		$("#transfer-time").timepicker();
+		$("#transfer-return-time").timepicker();
+	};
 });
 
