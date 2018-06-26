@@ -1198,7 +1198,7 @@ footer
 	.button
 		width: 100%
 		&:hover
-			transform: scale(1)
+			transform: scale(1.01)
 	&.simple-text
 		max-width: 591px
 		p:last-of-type
@@ -1249,22 +1249,15 @@ footer
 	border-spacing: 0
 	tr:nth-child(2n+1)
 		background: #EAE7EA
+	tr.bold
+		font-weight: bold
+		span
+			color: $light-green
 	td
 		padding: 2px 8px
 		outline: 0
 		overflow: hidden
 		text-overflow: ellipsis
-		a, span
-			margin-right: 8px
-			display: inline-block
-			&:last-child
-				margin-right: 0
-
-	input
-		height: 24px
-		border: 0
-		padding: 0
-		background: transparent
 
 .timepicker
 	margin-top: 4px
