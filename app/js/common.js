@@ -4,8 +4,54 @@ $(function() {
     event.preventDefault();
   });
 
-	$("form").submit(function(){ return false});
-	
+  //E-mail Ajax Send
+  $(".formajx").submit(function() { //Change
+    var th = $(this);
+
+    $.ajax({
+      type: "POST",
+      url: $(th).attr("action"), //Change
+      data: th.serialize(),
+    }).done(function(data) {
+
+      var message = data.message;
+      if(message){
+          $("#thank-popup-window").html("<p>" + message + "</p>")
+          $("#thank-popup-window-btn").trigger('click');
+        }
+
+      setTimeout(function() {
+        
+        $.magnificPopup.close();
+        th.trigger("reset");
+      },2500);
+    });
+
+    return false;
+  });
+
+
+
+  function popupInit(){
+    $(".popup-form-btn").magnificPopup({
+      type: "inline",
+      fixedContentPos: true,
+      mainClass: "mfp-fade",
+      removalDelay: 300
+    });
+  }
+
+  function findGetParameter(parameterName) {
+    var result = null,
+        tmp = [];
+    var items = location.search.substr(1).split("&");
+    for (var index = 0; index < items.length; index++) {
+        tmp = items[index].split("=");
+        if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+    }
+    return result;
+  }
+
 
   /*** a slider for cars ***/
 
@@ -14,8 +60,8 @@ $(function() {
 	});
 
 	/***  a slider for cars ***/ 
-	
-	
+
+
   /***** dropdowns ****/
 
   function findAncestor (el, cls) {
@@ -27,7 +73,6 @@ $(function() {
     this.button = _button;
     this.dropdown_container = _dropdown_container;
     this.duration = _duration;
-    
 
 
     $(button).click(function(){
@@ -97,12 +142,19 @@ $(function() {
       current_item = $(tab_items).eq(0);
       scrollTo("#header");
 
+      var date = $(current_item).find(".date");
       if(current_index == 1)
       {
-        $(current_item).find("input[name='endpoint']").attr("disabled", "").val("");
+        $($(date)[date.length-1]).find("input").attr("disabled", "");
+        $($(date)[date.length-1]).find("input").removeAttr("required").val("");
+        $(current_item).find("form").append("<div class='hidden dest'>1</div>");
       }
       else
-        $(current_item).find("input[name='endpoint']").removeAttr("disabled");
+      {
+        $($(date)[date.length-1]).find("input").removeAttr("disabled");
+        $($(date)[date.length-1]).find("input").attr("required", "");
+        $(current_item).find("form").find(".dest").detach();
+      }
     }
 
     var form_content = $(current_item).find(".form-content");
@@ -129,16 +181,13 @@ $(function() {
 
       $(form_content).fadeIn(800);
       $("#check-auto").fadeIn(1000);
-      reinitCarsSliders();
+ 
       is_tabs_open = true;
     }else{
-
-
       $(".header-bottom-line").animate({marginTop: $(window).width() >= 993 ? marginTopHeader : '0px'}, 1000);
       $("#check-auto").fadeIn(1000);
-      reinitCarsSliders();
-      is_tabs_open = false;
 
+      is_tabs_open = false;
     }
   
   }).eq(0).addClass("active");
@@ -155,11 +204,12 @@ $(function() {
   /**** passengers-counter  ****/
 
   function displayTotal(_counter){
+    
     var main = $(_counter).parent().parent().parent(),
-      input = $(main).find("input[name=Total]"),
-      dsp_adults = $(main).find("input[name=Display_Adults]"),
-      dsp_children = $(main).find("input[name=Display_Children]"),
-      counters = $(main).find(".count-passengers input");
+        input = $(main).find("input[name=Total]"),
+        dsp_adults = $(main).find("input[name=Display_Adults]"),
+        dsp_children = $(main).find("input[name=Display_Children]"),
+        counters = $(main).find(".count-passengers input");
 
     var count_persons = 0,
         count_childrens = 0,
@@ -189,9 +239,9 @@ $(function() {
 
   }
 
-  function passengersCounter(_type, _counter, _action){
+  function passengersCounter(_counter, _action){
 
-    var output = $(_counter).find("input[name=" + _type + "]"),
+    var output = $(_counter).find("input"),
       current_val = parseInt($(output).val());
 
     if(_action == "inc")
@@ -208,86 +258,199 @@ $(function() {
   $(".passengers .counter .inc").click(function(){
 
     var counter = $(this).parent();
-    var type = $(counter).data("input");
-    passengersCounter(type, counter, "inc");
+    passengersCounter(counter, "inc");
 
   });
 
   $(".passengers .counter .dec").click(function(){
 
     var counter = $(this).parent();
-    var type = $(counter).data("input");
-
-    passengersCounter(type, counter, "dec");
+    passengersCounter(counter, "dec");
 
   });
 
   /**** passengers-counter  ****/
+  
 
   /**** order-form ******/
 
-  var order_form = $("#order-form"),
-      alert_window = $(order_form).find(".alert-warning"),
-      order_form_content = $(order_form).find(".form-content"),
-      input_origin = $(order_form).find("input[name=origin]"),
-      input_destination = $(order_form).find("input[name=destination]"),
-      output_price = $(order_form).find(".output");
+  //Form for orders
+  function OrderForm(_form){
+    this.form = $(_form);
+    this.alert_window = $(_form).find(".alert-warning");
+    this.form_content = $(_form).find(".form-content");
+    this.input_origin = $(_form).find("input[data=origin]");
+    this.input_destination = $(_form).find("input[data=destination]");
+    this.categories = $(_form).find(".check-auto .check-auto-item");
+    this.buttons = $(_form).find("a");
+    this.inputs = $(_form).find("input");
+    this.errors = {
+       zero_result: $(_form).find(".errors .zero-result").html(),
+       not_found: $(_form).find(".errors .zero-result").html(),
+       default: $(_form).find(".errors .default").html()
+    }
+
+    this.init = function(){
 
 
-      function orderFormToggle(_form_content){
-        if(_form_content){
-          if(!is_tabs_open)
-          { 
-            reinitCarsSliders();
-            $(".header-bottom-line").animate({marginTop:'0px'}, 1000);
-            $(_form_content).slideToggle(1000);
-            $("#check-auto").fadeOut(1000);
+      $(this.inputs).each(function(){
+
+        var name = $(this).attr("name");
+        var value = findGetParameter(name);
+
+        if(name === "discount"){
+          var discount = $(".tabs-controls-item.active input[name='discount']").val();
+          discount = discount.replace("-", '').replace("%", "");
+          if(discount)
+            $(this).val(discount);
+
+        }
+
+        if(name && value && $.trim(value).length > 0){
+          $(this).val(value);
+        }
+
+      });
+
+    }
+
+    this.buttonsInit = function (){
+      self = this;
+      for(var i = 0; i < this.buttons.length; i++){
+        
+        $(this.buttons[i]).click(function(i){
+
+          var query = $(this).attr("href"),
+              params = "?";
+
+          //!!!!!!!
+          self.form.find("#cat").val($(this).data("val"));
+
+          
+
+
+          var inputs = $(self.form).find("input");
+          console.log(inputs);
+          alert("x");
+
+          $(inputs).each(function(i){
+
+            
+
+            var name = $(this).data("get");
+                value = $(this).val();
+
+                console.log(name);
+                alert("x");
+            //!!!!
+            if(/кг/.test(name)){
+               name = name.replace('кг', '');
+            }
+
+            if(name){
+                if($.trim(value).length > 0){
+                  if(i == 0){
+                    params +=  name + "=" + value + "&";
+                  }else if(i < inputs.length){
+                    params += name + "=" + value + "&";
+                  }
+                }
+            }
+          });
+
+          var dest = $(self.form).find(".dest").text();
+          if(dest){
+            params += "&" + "dest" +"=" + dest;
           }
 
-          $(_form_content).fadeIn(800);
-            is_tabs_open = true;
-        }else{
+          if(params.length > 0)
+            query += params;
 
-          $(".header-bottom-line").animate({marginTop:'135px'}, 1000);
-          is_tabs_open = false;
-        }
+          
+  
+
+          window.location = query;
+          return false;
+        });
+      }
+    }
+ 
+  }
+
+  function orderFormToggle(form_content){
+    if(form_content){
+      if(!is_tabs_open)
+      { 
+        $(".header-bottom-line").animate({marginTop:'0px'}, 1000);
+        $(form_content).slideToggle(1000);
+        $("#check-auto").fadeOut(1000);
       }
 
-      function getPriceForDestination(){
-        var origin = $.trim($(input_origin).val()),
-        destination = $.trim($(input_destination).val());
+      $(form_content).fadeIn(800);
+      is_tabs_open = true;
 
-        
+    }else{
 
-        if(origin.length > 0 && destination.length > 0){
+      $(".header-bottom-line").animate({marginTop:'135px'}, 1500);
+      is_tabs_open = false;
+    }
+  }
 
-          orderFormToggle(order_form_content);
-          scrollTo("#header-bottom-line");
+  function getPriceForDestination(form){
 
-          console.log("origin = " + origin);
-          console.log("destination = " + destination);
+    var origin = $.trim($(form.input_origin).val()),
+        destination = $.trim($(form.input_destination).val()); 
 
-          var directionsService = new google.maps.DirectionsService;
 
-          calculatePrice(directionsService, 
-           origin, 
-           destination,
-           69,
-           40,
-           alert_window,
-           output_price);
-        }
+    if(origin.length > 0 && destination.length > 0){
+
+      if(form.form_content){
+        orderFormToggle(form.form_content);
       }
 
-      $("input[name=origin], input[name=destination]").keyup(function(){
-        $(alert_window).fadeOut(200).empty();
-      });
-      $("input[name=origin], input[name=destination]").blur(function(){
+      scrollTo("#header-bottom-line");
 
-          setTimeout(getPriceForDestination, 200)
+      var directionsService = new google.maps.DirectionsService;
 
-      });
+      calculatePrice(directionsService, 
+                     origin, 
+                     destination,
+                     form
+                    );
+    }
 
+  }
+
+  function inputForm(elem, form, duration){
+    $(elem).keyup(function(){
+      $(form.alert_window).fadeOut(200).empty();
+      timer = setTimeout(getPriceForDestination, duration, form);
+    });
+  }
+
+  function getPrice(elem, form){
+    $(elem).blur(function(){
+      setTimeout(getPriceForDestination, 50, form)
+      clearTimeout(timer);
+    });
+  }
+
+
+  var order_forms = $(".order-form"); //all forms for order
+  if(order_forms.length > 0)
+  {
+    for(var i = 0; i < order_forms.length; i++ ){
+      
+      var form = new OrderForm(order_forms[i]);
+      form.buttonsInit();
+
+      inputForm(form.input_origin, form, 10);
+      inputForm(form.input_destination, form, 5000);
+      getPrice(form.input_origin, form);
+      getPrice(form.input_destination, form);
+
+    }
+  }
 
   /**** order-form ******/
 
@@ -347,64 +510,80 @@ $(function() {
   /** Calendar **/
 
   /**** Ajax Google Maps ****/
-  function calculatePrice(_directionsService, _origin, _destination, _pricePer, _fixPrice, _alert, _output) {
+  function setPrice(_categories, _distance){
+
+    if($(_categories).length > 0){
+      for(var i = 0; i < _categories.length; i++){
+        var category = $(_categories[i]),
+            price_per_km = $(category).find(".price").text(),
+            category_output = $(category).find(".output"),
+            fix_way =  $(category).find(".fix-way").text(),
+            fix_price = $(category).find(".fix-price").text();
+
+        price_per_km = parseFloat(price_per_km.replace(',','.'));
+
+        var price = fix_price;
+
+        if(price_per_km)
+          var price = _distance > fix_way ? _distance * price_per_km : fix_price;
+        if(typeof price !== "string")
+          $(category_output).text(price.toFixed(1) + " €").parent().addClass("active");
+        else
+          $(category_output).text(price).parent().addClass("active");
+
+      }
+    }
+  }
+
+  function calculatePrice(_directionsService,
+                          _origin,
+                          _destination, 
+                          _form) {
 
     if(true){
-
       _directionsService.route({
         origin: _origin,
         destination: _destination,
         travelMode: 'DRIVING',
         unitSystem: google.maps.UnitSystem.METRIC
       }, function(response, status) {
-
-
           
           switch(status){
             case 'OK': {
+
               var directionsRoute = response.routes.shift();
               var directionsLeg = directionsRoute.legs.shift();
               var distance = Math.ceil(directionsLeg.distance.value / 1000);
 
-              var res = distance > 40 ? distance * _pricePer : 50 * _fixPrice;
-              console.log(distance);
-              $(_output).text(res + " €").parent().addClass("active");
-              $(_alert).fadeOut(200).empty();
+              setPrice(_form.categories, distance);
+              
+              $(_form.alert_window).fadeOut(200).empty();
 
               break;
             }
             case 'ZERO_RESULTS':{
-              $(_alert).empty();
-              $(_alert).append("<p>Вы уверенны, что указали направления правильно? Не получается построить маршрут, воспользуйтесь обрытным звонком для уточнения информации:</p><a href='#popup-form' class='button small popup-form-btn'>Заказать звонок</a>").fadeIn(200);
+              $(_form.alert_window).empty();
+              $(_form.alert_window).append(_form.errors.zero_result).fadeIn(200);
+              popupInit();
               break;
             }
             case 'NOT_FOUND':{
-              $(_alert).empty();
-              $(_alert).append("<p>Вы уверены, что указали правильно направление?</p>").fadeIn(200);
+              $(_form.alert_window).empty();
+              $(_form.alert_window).append(_form.errors.not_found).fadeIn(200);
+              popupInit();
               break;
             }
             default: {
-              $(_alert).empty();
-              $(_alert).append("<p>Одно или несколько, указанных вами мест не существует!</p>").fadeIn(200);
+              $(_form.alert_window).empty();
+              $(_form.alert_window).append(_form.errors.default).fadeIn(200);
+              popupInit();
               break;
             }
           }
-
-          $(".popup-form-btn").magnificPopup({
-            type: "inline",
-            fixedContentPos: true,
-            mainClass: "mfp-fade",
-            removalDelay: 300
-          });
-
       });
 
-    }else{
-
-
-
     }
-
+    
   }
   /**** Ajax Google Maps ****/
 
@@ -421,35 +600,38 @@ $(function() {
   });
   /**** Poshy Tip ****/
 
-  /**** Pay Methods radio  ****/ 
-  $("input[name=pay-method]").on('change', function() {
+   /**** Pay Methods radio  ****/ 
+  $("input.pay-method").on('change', function() {
     var $this = $(this),
-        pm = $this.closest(".pay-method"),
-        common = pm.find(".dropdown .pay-method-label"),
-        span = pm.find(".dropdown .pay-method-label span"),
-        cards = pm.find(".dropdown input[name=pay-method-card]");
+        pm = $(".pay-method"),
+        common = pm.find(".dropdown .pay-method-label.active"),
+        span = common.find("span"),
+        cards = pm.find(".dropdown input.pay-method-card"),
+        img = common.find(".img-wrap img");
 
 
     cards.prop("checked", false);
     common.removeClass("active");
     span.text("");
+    $(img).attr("src", "");
+    $(img).attr("alt", "");
   });
  
-  $("input[name=pay-method-card]").on('change', function() {
+  $("input.pay-method-card").on('change', function() {
     var $this = $(this),
         src = $this.data("img"),
         alt = $this.data("alt"),
-        dropdown = $this.closest(".dropdown"),
+        dropdown = $(findAncestor(this, "dropdown"))
         common = dropdown.find(".pay-method-label"),
-        commonImg = dropdown.find(".pay-method-label img"),
-        commonSpan = dropdown.find(".pay-method-label span");
+        parentImg = common.find("img"),
+        parentSpan = common.find("span");
 
-    commonImg.attr("src", src);
-    commonImg.attr("alt", alt);
+    parentImg.attr("src", src);
+    parentImg.attr("alt", alt);
     common.addClass("active");
-    commonSpan.text(alt);
+    parentSpan.text(alt);
   });
-   /**** Pay Methods radio  ****/ 
+   /**** Pay Methods radio  ****/  
 
    
 
@@ -484,17 +666,269 @@ $(function() {
     });
 
   /***  a slider for the destination ***/
-  
-  $(".popup-form-btn").magnificPopup({
-    type: "inline",
-    fixedContentPos: true,
-    mainClass: "mfp-fade",
-    removalDelay: 300
-  });
+   
 
-	if($("input").is(".transfer-time")) {
+  if($("input").is(".transfer-time")) {
 		$("#transfer-time").timepicker();
 		$("#transfer-return-time").timepicker();
 	};
+
+  $("textarea").removeAttr("rows").removeAttr("cols");
+  popupInit();
+
+
+  
+  function MainForm(_form){
+    this.form = $(_form);
+    this.inputs = $(_form).find("input, textarea");
+    this.categories = $(_form).find(".check-auto .check-auto-item");
+    this.input_origin = $(_form).find("input[data=origin]");
+    this.input_destination = $(_form).find("input[data=destination]");
+    this.two_way = $(_form).find("div[data-back=1]");
+    this.way_choosers = $(_form).find("input[data-dest]");
+
+    function chooser(self){
+      var required = [ false, false];
+      $(self.way_choosers).change(function(){
+        
+        if($(this).data("dest") === 1){
+          $(self.two_way).fadeOut();
+          $(self.two_way).find("input").each(function(i){
+            $(this).val("");
+       
+            if ($(this).attr("required")){
+              required[i] = true;
+              $(this).removeAttr("required");
+            }
+
+          });
+        }
+        else{
+          $(self.two_way).fadeIn();
+           $(self.two_way).find("input").each(function(i){
+            if (required[i]){
+              
+              $(this).attr("required", "required");
+            }
+            required[i] = false;
+          });
+          
+        }
+      });
+    }
+
+    this.init = function(){
+
+      chooser(this);
+
+      $(this.inputs).each(function(i){
+
+        var name = $(this).data("get");
+
+        if(/кг/.test(name)){
+               name = name.replace('кг', '');
+            }
+        var value = findGetParameter(name);
+        if(name && value && $.trim(value).length > 0){
+
+          if(name === "discount") {
+              value = Math.abs(parseInt(value));
+          }
+
+          $(this).val(value);
+        }
+
+      });
+
+
+      var origin = $.trim($(this.input_origin).val()),
+          destination = $.trim($(this.input_destination).val()); 
+
+
+      if(origin.length > 0 && destination.length > 0){
+        var directionsService = new google.maps.DirectionsService;
+
+        calculatePrice(directionsService, 
+                       origin, 
+                       destination,
+                       {
+                         categories: this.categories
+                       }
+                      );
+      }
+
+      var cat = findGetParameter("cat");
+      if(cat){
+        var checkboxes = $(this.categories).find("input");
+        $(checkboxes).each(function(){
+          if($(this).data("cat") === cat){
+            $(this).attr("checked","checked");
+          }
+        });
+
+      }
+
+      var counters = $(this.form).find(".passengers .counter");
+      if(counters){
+        $((counters)[0]).find(".inc").trigger("click");
+        $((counters)[0]).find(".dec").trigger("click");
+      }
+      
+      $(".passengers .dropdown-content").hide();
+
+      var dest = findGetParameter("dest");
+
+      if(dest){
+        $(this.way_choosers).each(function(){
+
+          if($(this).data("dest") == dest){
+            $(this).attr("checked","checked");
+            $(this).trigger("change");
+          }
+        });
+      }
+
+      //to_json(this);
+    }
+
+
+
+  }
+
+  var main_form = new MainForm(".main-form"),
+      order_form = new OrderForm(".order-form");
+  main_form.init();
+  order_form.init();
+
+  inputForm(main_form.input_origin, main_form, 10);
+  inputForm(main_form.input_destination, main_form, 10);
+  getPrice(main_form.input_origin, main_form);
+  getPrice(main_form.input_destination, main_form);
+
+  function sendEmail(data, csrftoken) {
+      $.ajax({
+          url: "zrpt-email/",
+          type: "POST",
+          beforeSend: function(xhr){
+          if(csrftoken)
+            xhr.setRequestHeader("X-CSRFToken", csrftoken);
+          },
+          contentType: 'application/json; charset=utf-8',
+          dataType: 'text',
+          data: JSON.stringify(data)
+        }).done(function () {
+      });
+  }
+  
+  
+  function validate_form() {
+      
+  }
+
+
+  $(main_form.form).submit(function(){
+
+    var th = $(this),
+        item = th.find(".check-auto-item input:checked"),
+        selected = findAncestor(item[0], "check-auto-item"),
+        price = $(selected).find(".output").text(),
+        field = $(selected).find(".output-price");
+        $(field).val(price);
+
+    var customer_email = th.find('input[name=customer_email]').val(),
+        customer_name =  th.find('input[name=customer_name]').val();
+
+    var data = th.find("input, textarea");
+
+    var csrftoken = th.find("[name=csrfmiddlewaretoken]").val();
+
+    data = Array.from(data).filter(function(item) {
+
+      var type = item.getAttribute("type");
+
+      if (type === "radio"){
+          return $(item).prop("checked")
+      }else{
+        if(item.value !== "" && item.name !== "")
+          return item.name !== "csrfmiddlewaretoken";
+      }
+    });
+
+    data = data.map(function (item) {
+       return {
+         name: item.name,
+         data_name: item.getAttribute("data-name"),
+         value: item.value
+       };
+    });
+
+    function csIndexOf(array, value) {
+        for(var i = 0; i < array.length; i++){
+          if(array[i].name === value.name){
+            return i;
+          }
+        }
+        return -1;
+    }
+
+    data = data.filter(function (value, index, self){
+        return csIndexOf(self, value) === index;
+    });
+
+    var tr_price = data.find(function (elem) {
+       if(elem.name === "transfer_price"){
+          return true;
+       }
+    });
+    
+    tr_price.value = parseFloat(tr_price.value.replace(/[^.0-9]/g, '')).toString();
+  
+    data = JSON.stringify(data);
+
+
+   
+    $.ajax({
+      url: "zrpt/", 
+      type: "POST",
+      beforeSend: function(xhr){
+        if(csrftoken)
+          xhr.setRequestHeader("X-CSRFToken", csrftoken);
+      },
+      contentType: 'application/json; charset=utf-8',
+      dataType: 'text',
+      data: data
+    }).done(function(order) {
+
+
+      var message = th.find(".message");
+      if(message){
+          $("#thank-popup-window").html("<p>" + $(message).text() + "</p>")
+          $("#thank-popup-window-btn").trigger('click');
+        }
+
+      var submission = th.find("#submission");
+      if(submission){
+
+        var sb_data = {
+            submission: submission.html(),
+            customer_email: customer_email,
+            customer_name: customer_name,
+            order_id: order
+        };
+        sendEmail(sb_data, csrftoken)
+      }
+
+      setTimeout(function() {
+        
+        $.magnificPopup.close();
+        th.trigger("reset");
+      },2500);
+
+    });
+
+    return false;
+  });
+
+
 });
 

@@ -142,19 +142,19 @@
 						
 						<!-- tabs-item-->
 						<div class="tabs-item">
-							<form action="#" class="header-main-form" id="order-form">
+							<form action="#" class="header-main-form order-form" id="order-form">
 
 								<!-- form-header -->
 								<div class="form-header">
 									
 									<label class="text">
 										<i class="icon-map-mark"></i>
-										<input type="text" name="origin" required="" class="autocomplate" placeholder="Откуда: аэропорт, вокзал...">
+										<input type="text" name="origin" data="origin" required="" class="autocomplate" placeholder="Откуда: аэропорт, вокзал...">
 									</label>
 
 									<label class="text">
 										<i class="icon-map-mark"></i>
-										<input type="text" name="destination" class="autocomplate" placeholder="Куда: Отель, аэропорт...">
+										<input type="text" name="destination" data="destination" class="autocomplate" placeholder="Куда: Отель, аэропорт...">
 									</label>
 
 									<label class="date" for="#">
@@ -177,9 +177,9 @@
 
 											<div class="count-passengers">
 												<h6>Взрослые</h6>
-												<div class="counter" data-input="Adults">
+												<div class="counter">
 													<i class="icon-man"></i>
-													<input type="text" disabled="" name="Adults" value="0">
+													<input type="text" disabled="" name="some_name" value="0">
 													<div class="inc btn">+</div>
 													<div class="dec btn">-</div>
 												</div>
@@ -189,9 +189,9 @@
 
 												<h6> Дети <span> 0-9 кг </span> </h6>
 
-												<div class="counter" data-input="Children0_9">
+												<div class="counter">
 													<i class="icon-man"></i>
-													<input type="text" disabled="" name="Children0_9" value="0">
+													<input type="text" disabled="" name="some_name" value="0">
 													<div class="inc btn">+</div>
 													<div class="dec btn">-</div>
 												</div>
@@ -202,9 +202,9 @@
 
 												<h6> Дети <span> 9-18 кг </span> </h6>
 
-												<div class="counter" data-input="Children9_18">
+												<div class="counter">
 													<i class="icon-man"></i>
-													<input type="text" disabled="" name="Children9_18" value="0">
+													<input type="text" disabled="" name="some_name" value="0">
 													<div class="inc btn">+</div>
 													<div class="dec btn">-</div>
 												</div>
@@ -215,9 +215,9 @@
 
 												<h6> Дети <span> 18-36 кг </span> </h6>
 
-												<div class="counter" data-input="Children18_36">
+												<div class="counter">
 													<i class="icon-man"></i>
-													<input type="text" disabled="" name="Children18_36" value="0">
+													<input type="text" disabled="" name="some_name" value="0">
 													<div class="inc btn">+</div>
 													<div class="dec btn">-</div>
 												</div>
@@ -234,6 +234,9 @@
 								
 								<!-- form-content -->
 								<div class="form-content">
+									<!-- !!!!!! -->
+									<input type="hidden" id="cat" data-get='cat' >
+									<!-- !!!!!! -->
 
 									<div class="alert alert-warning" role="alert">
 
@@ -243,6 +246,13 @@
 									<div class="check-auto">
 
 										<div class="check-auto-item">
+
+											<div class="hidden">
+												<div class="price">50</div>
+												<div class="fix-price">500</div>
+												<div class="fix-way">800</div>
+												<input type="hidden" class="output-price" data-name="Transfer price" name="transfer_price" value="">										
+											</div>
 
 											<div class="check-auto-item-topline">
 
@@ -282,12 +292,19 @@
 											</div>
 
 											<div class="btn-wrap">
-												<a href="form.html" class="button">Заказать трансфер</a>
+												<a href="form.html" data-val="cat_a" class="button">Заказать трансфер</a>
 											</div>
 
 										</div>
 
 										<div class="check-auto-item">
+
+											<div class="hidden">
+												<div class="price">100</div>
+												<div class="fix-price">1000</div>
+												<div class="fix-way">800</div>
+												<input type="hidden" class="output-price" data-name="Transfer price" name="transfer_price" value="">
+											</div>
 
 											<div class="check-auto-item-topline">
 
@@ -325,7 +342,7 @@
 											</div>
 
 											<div class="btn-wrap">
-												<a href="form.html" class="button">Заказать трансфер</a>
+												<a href="form.html"  data-val="cat_b" class="button">Заказать трансфер</a>
 											</div>
 										</div>
 
