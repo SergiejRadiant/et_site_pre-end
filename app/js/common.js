@@ -323,30 +323,15 @@ $(function() {
           var query = $(this).attr("href"),
               params = "?";
 
-          //!!!!!!!
           self.form.find("#cat").val($(this).data("val"));
 
-          
-
-
           var inputs = $(self.form).find("input");
-          console.log(inputs);
-          alert("x");
 
           $(inputs).each(function(i){
 
-            
-
             var name = $(this).data("get");
                 value = $(this).val();
-
-                console.log(name);
-                alert("x");
-            //!!!!
-            if(/кг/.test(name)){
-               name = name.replace('кг', '');
-            }
-
+               
             if(name){
                 if($.trim(value).length > 0){
                   if(i == 0){
@@ -669,6 +654,12 @@ $(function() {
    
 
   if($("input").is(".transfer-time")) {
+
+    let inputs = $(".transfer-time");
+
+    $(inputs[0]).attr("id", "transfer-time");
+    $(inputs[1]).attr("id", "transfer-return-time");
+
 		$("#transfer-time").timepicker();
 		$("#transfer-return-time").timepicker();
 	};
@@ -724,10 +715,10 @@ $(function() {
       $(this.inputs).each(function(i){
 
         var name = $(this).data("get");
-
+        /*
         if(/кг/.test(name)){
                name = name.replace('кг', '');
-            }
+        }*/
         var value = findGetParameter(name);
         if(name && value && $.trim(value).length > 0){
 

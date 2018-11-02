@@ -149,22 +149,22 @@
 									
 									<label class="text">
 										<i class="icon-map-mark"></i>
-										<input type="text" name="origin" data="origin" required="" class="autocomplate" placeholder="Откуда: аэропорт, вокзал...">
+										<input type="text" data="origin" data-get="origin" required="" class="autocomplate" placeholder="Откуда: аэропорт, вокзал...">
 									</label>
 
 									<label class="text">
 										<i class="icon-map-mark"></i>
-										<input type="text" name="destination" data="destination" class="autocomplate" placeholder="Куда: Отель, аэропорт...">
+										<input type="text" data="destination" data-get="destination" class="autocomplate" placeholder="Куда: Отель, аэропорт...">
 									</label>
 
 									<label class="date" for="#">
 										<i class="icon-calendar"></i>
-										<input type="text" class="datepicker" placeholder="Дата трансфера">
+										<input type="text" class="datepicker" data-get="start_date" placeholder="Дата трансфера">
 									</label>
 
 									<label class="date">
 										<i class="icon-calendar"></i>
-										<input type="text" class="datepicker" placeholder="Поездка обратно">
+										<input type="text" class="datepicker" data-get="return_date" placeholder="Поездка обратно">
 									</label>
 
 									<label class="passengers dropdown">
@@ -179,7 +179,7 @@
 												<h6>Взрослые</h6>
 												<div class="counter">
 													<i class="icon-man"></i>
-													<input type="text" disabled="" name="some_name" value="0">
+													<input type="text"  disabled="" data-adult="true" data-get="adults" name="some_name" value="0">
 													<div class="inc btn">+</div>
 													<div class="dec btn">-</div>
 												</div>
@@ -191,7 +191,7 @@
 
 												<div class="counter">
 													<i class="icon-man"></i>
-													<input type="text" disabled="" name="some_name" value="0">
+													<input type="text" disabled="" data-children="true"  data-get="children0-9" name="some_name" value="0">
 													<div class="inc btn">+</div>
 													<div class="dec btn">-</div>
 												</div>
@@ -204,7 +204,7 @@
 
 												<div class="counter">
 													<i class="icon-man"></i>
-													<input type="text" disabled="" name="some_name" value="0">
+													<input type="text" disabled=""  data-get="children9-18" name="some_name" value="0">
 													<div class="inc btn">+</div>
 													<div class="dec btn">-</div>
 												</div>
@@ -217,7 +217,7 @@
 
 												<div class="counter">
 													<i class="icon-man"></i>
-													<input type="text" disabled="" name="some_name" value="0">
+													<input type="text" disabled="" data-get="children18-36"  name="some_name" value="0">
 													<div class="inc btn">+</div>
 													<div class="dec btn">-</div>
 												</div>
@@ -1073,7 +1073,7 @@
 					"async": false
 				},
 				{	
-					"src" : "js/i18n/datepicker-ru.js", 
+					"src" : "js/i18n/datepicker-it.js", 
 					"async" : false
 				}
 			]
